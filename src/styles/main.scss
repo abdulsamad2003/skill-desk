@@ -1,13 +1,16 @@
-// Tailwind CSS directives
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// Import variables first
+@use 'variables' as *;
 
-// Use modern SCSS modules
-@use 'globals' as *;
+// Import component styles
+@use 'globals';
 @use 'navbar';
 @use 'hero';
 @use 'features';
 @use 'clients';
 @use 'categories';
 @use 'top-courses';
+
+// Tailwind CSS directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

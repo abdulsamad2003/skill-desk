@@ -1,9 +1,4 @@
-// Variables
-$primary-color: #ff914d;
-$secondary-color: #0148A9;
-$accent-color: #003f7d;
-$light-bg: #fff2ea;
-
+@use 'variables' as *;
 
 // Reset and base styles
 * {

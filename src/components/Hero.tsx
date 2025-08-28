@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -8,14 +8,14 @@ const Hero = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(100);
+  const typingSpeed = 100;
 
-  const toRotate = [
+  const toRotate = useMemo(() => [
     "Enterprise-grade AI learning platform designed for organizational transformation and workforce development.",
     "Comprehensive skill assessment, personalized learning paths, and data-driven insights for measurable outcomes.",
     "Secure, scalable, and compliant solution trusted by Fortune 500 companies worldwide.",
     "Advanced analytics and reporting capabilities to track ROI and learning effectiveness across your organization.",
-  ];
+  ], []);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;

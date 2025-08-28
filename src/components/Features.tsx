@@ -84,7 +84,7 @@ const Features = () => {
               </svg>
             </div>
             <h3>Career Path & Skill Recommendations</h3>
-            <p>Get AI-driven career growth suggestions tailored to each employee's role, skills, and learning history.</p>
+            <p>Get AI-driven career growth suggestions tailored to each employee&apos;s role, skills, and learning history.</p>
           </div>
 
           <div className="feature-card">

@@ -1,0 +1,15 @@
+// Tailwind CSS directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import SCSS files in correct order (variables first)
+@import 'globals';
+@import 'navbar';
+@import 'hero';
+@import 'features';
+@import 'clients';
+@import 'categories';
+@import 'top-courses';
+
+// Additional custom styles can be added here

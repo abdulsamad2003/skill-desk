@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  optimizeFonts: true,
-  experimental: {
-    optimizeFonts: true,
+  // Font optimization is enabled by default in Next.js 13+
+  images: {
+    domains: ['fonts.googleapis.com', 'fonts.gstatic.com'],
   },
 };
 

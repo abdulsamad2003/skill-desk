@@ -3,13 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-// Import SCSS files in correct order (variables first)
-@import 'globals';
-@import 'navbar';
-@import 'hero';
-@import 'features';
-@import 'clients';
-@import 'categories';
-@import 'top-courses';
-
-// Additional custom styles can be added here
+// Use modern SCSS modules
+@use 'globals' as *;
+@use 'navbar';
+@use 'hero';
+@use 'features';
+@use 'clients';
+@use 'categories';
+@use 'top-courses';

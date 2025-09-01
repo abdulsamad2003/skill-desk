@@ -2,6 +2,7 @@
 import "../styles/navbar.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Sidebar from "./Sidebar";
 
 const Navbar = () => {
@@ -43,14 +44,14 @@ const Navbar = () => {
 
           {/* Logo */}
           <div className="navbar__logo">
-            <a href="/">
+            <Link href="/">
               <Image
                 src="/assets/skilldesk-logo.png"
                 width={140}
                 height={50}
                 alt="SkillDesk Logo"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation Links */}

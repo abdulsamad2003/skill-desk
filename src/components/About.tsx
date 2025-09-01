@@ -20,13 +20,13 @@ const About = () => {
                 </strong>
               </p>
               <p>
-              At our core, we believe learning should be smart, practical, and personalized. That’s why we’ve built a platform where AI does the heavy lifting — generating skill-based courses automatically, based on each learner’s goals, experience, and pace.
+              At our core, we believe learning should be smart, practical, and personalized. That&apos;s why we&apos;ve built a platform where AI does the heavy lifting — generating skill-based courses automatically, based on each learner&apos;s goals, experience, and pace.
               </p>
               <p>
-              Whether you're upskilling in tech, design, data, or business, our AI builds dynamic, interactive learning paths tailored just for you. Each course is instantly assembled from real-world scenarios, practical tasks, and performance-based assessments — so you're not just learning, you're doing.
+              Whether you&apos;re upskilling in tech, design, data, or business, our AI builds dynamic, interactive learning paths tailored just for you. Each course is instantly assembled from real-world scenarios, practical tasks, and performance-based assessments — so you&apos;re not just learning, you&apos;re doing.
               </p>
               <p>
-              From absolute beginners to working professionals, we’re helping people unlock skills that stick — faster, smarter, and more efficiently than ever.
+              From absolute beginners to working professionals, we&apos;re helping people unlock skills that stick — faster, smarter, and more efficiently than ever.
               </p>
               <button className="button">More About Us</button>
             </div>

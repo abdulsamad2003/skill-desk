@@ -6,15 +6,10 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { useSpring, animated } from "react-spring";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
-import { useState } from "react";
-import About from "./About";
-import Video from "./Video";
 
 const Carousel = () => {
-  const [video, setVideo] = useState(false);
   const styles = useSpring({
     to: [{ opacity: 1, marginTop: "30px" }],
     from: { opacity: 0, marginTop: "80px" },

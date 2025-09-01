@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const About = () => {
   return (
     <div>
@@ -32,10 +34,12 @@ const About = () => {
             </div>
             <div className="col-lg-6 col-xl-5 offset-xl-1">
               <div className="info-box">
-                <img
+                <Image
                   className="img--layout bg__image"
-                  src="img/about_layout.png"
-                  alt="img"
+                  src="/img/about_layout.png"
+                  alt="About section layout illustration"
+                  width={500}
+                  height={400}
                 />
                 {/* <img className="img--bg upper__image" src="img/about-us.jpg" alt="img" /> */}
                 <div className="new__div">

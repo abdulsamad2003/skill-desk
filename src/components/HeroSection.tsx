@@ -6,6 +6,7 @@ import "swiper/css";
 import { useSpring, animated } from "react-spring";
 import { Autoplay } from "swiper/modules";
 import { useState } from "react";
+import Image from "next/image";
 import About from "./About";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -53,10 +54,13 @@ const HeroSection = () => {
       >
         <SwiperSlide>
           <div className="slider">
-            <img
+            <Image
               className="slider_img"
               src="/assets/top-courses/project-management.jpg"
-              alt="img"
+              alt="Project Management Course"
+              width={1200}
+              height={600}
+              priority
             />
             <div
               className="slider_text_container_bg"
@@ -86,10 +90,12 @@ const HeroSection = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slider">
-            <img
+            <Image
               className="slider_img"
               src="/assets/top-courses/teams.jpg"
-              alt="img"
+              alt="Teams Collaboration Course"
+              width={1200}
+              height={600}
             />
             <div
               className="slider_text_container_bg"
@@ -119,10 +125,12 @@ const HeroSection = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slider">
-            <img
+            <Image
               className="slider_img"
               src="/assets/top-courses/ui-ux-designer.jpg"
-              alt="img"
+              alt="UI/UX Design Course"
+              width={1200}
+              height={600}
             />
             <div
               className="slider_text_container_bg"

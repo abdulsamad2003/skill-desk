@@ -2,12 +2,12 @@
 // This file should be imported in layout.tsx
 
 // Import component styles
-@import 'navbar.scss';
-@import 'sidebar.scss';
-@import 'hero-section.scss';
-@import 'about.scss';
-@import 'globals.css';
-@import 'Home.module.css';
+@use 'navbar.scss';
+@use 'sidebar.scss';
+@use 'hero-section.scss';
+@use 'about.scss';
+@use 'globals.css';
+@use 'Home.module.css';
 
 // Add global styles if needed
 * {

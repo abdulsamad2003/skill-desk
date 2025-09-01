@@ -1,66 +1,81 @@
-'use client';
-
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import "../styles/navbar.scss";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: "#", label: "Home" },
+    { href: "#about", label: "About Us" },
+    { href: "#", label: "Courses" },
+    { href: "#", label: "Contact" }
+  ];
 
   return (
-    <nav className="navbar">
-      {/* Logo Section */}
-      <div className="navbar-logo">
-        <Link href="/" className="logo-link">
-            <Image src="/assets/skilldesk-logo.png" alt="Logo" width={100} height={100} />
-        </Link>
-      </div>
+    <>
+      <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
+        {sidebar && <Sidebar sidebar={sidebar} setSidebar={setSidebar} />}
+        
+        <div className="navbar__container">
+          {/* Mobile Menu Button */}
+          <button 
+            className="navbar__mobile-toggle"
+            onClick={() => setSidebar(!sidebar)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
-      {/* Desktop Navigation Links */}
-      <div className="navbar-links">
-        <Link href="/" className="nav-link active">Home</Link>
-        <Link href="/pricing" className="nav-link">Pricing</Link>
-        <Link href="/faq" className="nav-link">FAQ</Link>
-        <Link href="/contact" className="nav-link">Contact Us</Link>
-      </div>
+          {/* Logo */}
+          <div className="navbar__logo">
+            <a href="/">
+              <Image
+                src="/assets/skilldesk-logo.png"
+                width={140}
+                height={50}
+                alt="SkillDesk Logo"
+              />
+            </a>
+          </div>
 
-      {/* Desktop Auth Buttons */}
-      <div className="navbar-auth">
-        <button className="auth-btn auth-btn-login">Log in</button>
-        <button className="auth-btn auth-btn-signup">Sign Up</button>
-      </div>
+          {/* Desktop Navigation Links */}
+          <ul className="navbar__menu">
+            {navLinks.map((link, index) => (
+              <li key={index} className="navbar__item">
+                <a href={link.href} className="navbar__link">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-      {/* Mobile Menu Button */}
-      <button className="mobile-menu-btn" onClick={toggleMenu}>
-        <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
-      </button>
-
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-        <div className="mobile-menu-links">
-          <Link href="/" className="mobile-nav-link active" onClick={() => setIsMenuOpen(false)}>
-            Home
-          </Link>
-          <Link href="/pricing" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-            Pricing
-          </Link>
-          <Link href="/faq" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-            FAQ
-          </Link>
-          <Link href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-            Contact Us
-          </Link>
+          {/* Desktop Auth Buttons */}
+          <div className="navbar__auth">
+            <a href="#" className="navbar__btn navbar__btn--login">
+              Login
+            </a>
+            <a href="#" className="navbar__btn navbar__btn--signup">
+              Sign Up
+            </a>
+          </div>
         </div>
-        <div className="mobile-menu-auth">
-          <button className="auth-btn auth-btn-login">Log in</button>
-          <button className="auth-btn auth-btn-signup">Sign Up</button>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

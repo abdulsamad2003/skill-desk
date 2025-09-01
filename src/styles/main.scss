@@ -1,16 +1,107 @@
-// Import variables first
-@use 'variables' as *;
+// Main SCSS file - imports all component styles
+// This file should be imported in layout.tsx
 
 // Import component styles
-@use 'globals';
-@use 'navbar';
-@use 'hero';
-@use 'features';
-@use 'clients';
-@use 'categories';
-@use 'top-courses';
+@import 'navbar.scss';
+@import 'sidebar.scss';
+@import 'hero-section.scss';
+@import 'about.scss';
+@import 'globals.css';
+@import 'Home.module.css';
 
-// Tailwind CSS directives
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// Add global styles if needed
+* {
+  box-sizing: border-box;
+}
+
+// Bootstrap-like utility classes for the header
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+  
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+// Responsive utilities
+@media (min-width: 576px) {
+  .d-sm-block {
+    display: block !important;
+  }
+  .d-sm-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-lg-block {
+    display: block !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .d-xl-block {
+    display: block !important;
+  }
+  .d-xl-none {
+    display: none !important;
+  }
+}

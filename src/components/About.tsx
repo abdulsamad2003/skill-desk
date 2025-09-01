@@ -8,31 +8,27 @@ const About = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 about__left">
               <div className="heading heading--primary">
-                <span className="heading__pre_title">About Us</span>
+                <span className="heading__pre_title">🤖 About Us</span>
                 <h2 className="heading__title">
-                  Help is Our <span>Main Goal</span>
+                AI-Powered Training. <br /> <span> Real-World Skills.</span>
                 </h2>
               </div>
               <p>
                 <strong>
-                  Thresher shark rudd African lungfish silverside, Red salmon
-                  rockfish grunion, garpike zebra danio king-of-the-salmon banjo
-                  catfish."
+                 No boring lectures. No static PDFs.
+                 Just hands-on training, using the same software and tools professionals use on the job.
                 </strong>
               </p>
               <p>
-                Sea chub demoiselle whalefish zebra lionfish mud cat pelican
-                eel. Minnow snoek icefish velvet-belly shark, California halibut
-                round stingray northern sea robin. Southern grayling trout-perch
+              At our core, we believe learning should be smart, practical, and personalized. That’s why we’ve built a platform where AI does the heavy lifting — generating skill-based courses automatically, based on each learner’s goals, experience, and pace.
               </p>
               <p>
-                Sharksucker sea toad candiru rocket danio tilefish stingray
-                deepwater stingray Sacramento splittail, Canthigaster rostrata.
-                Midshipman dartfish Modoc sucker, yellowtail kingfish basslet.
-                Buri chimaera triplespine northern sea robin zingel lancetfish
-                galjoen fish, catla wolffish, mosshead warbonnet
+              Whether you're upskilling in tech, design, data, or business, our AI builds dynamic, interactive learning paths tailored just for you. Each course is instantly assembled from real-world scenarios, practical tasks, and performance-based assessments — so you're not just learning, you're doing.
               </p>
-              <button className="button">More About</button>
+              <p>
+              From absolute beginners to working professionals, we’re helping people unlock skills that stick — faster, smarter, and more efficiently than ever.
+              </p>
+              <button className="button">More About Us</button>
             </div>
             <div className="col-lg-6 col-xl-5 offset-xl-1">
               <div className="info-box">
@@ -44,16 +40,16 @@ const About = () => {
                 {/* <img className="img--bg upper__image" src="img/about-us.jpg" alt="img" /> */}
                 <div className="new__div">
                   <h4 className="info-box__title">
-                    We are Awesome Volunteer Team
+                  Smarter Learning Starts Here
                   </h4>
+                  <strong>
+                  AI That Builds Courses. You Build Skills.
+                  </strong>
                   <p>
-                    Gray eel-catfish longnose whiptail catfish smalleye
-                    squaretail queen danio unicorn fish shortnose greeneye
-                    fusilier fish silver carp nibbler sharksucker tench lookdown
-                    catfish
+                  Our platform uses AI to automatically create hands-on courses based on your goals. No filler, no fluff — just real-world tools, real tasks, and real progress.
                   </p>
-                  <a className="info-box__link" href="volunteer.html">
-                    Become a volunteer
+                  <a className="info-box__link" href="#">
+                    Explore Courses
                   </a>
                 </div>
               </div>

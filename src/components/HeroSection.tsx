@@ -1,6 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
 import "bootstrap/dist/css/bootstrap.css";
 import "swiper/css";
 import { useSpring, animated } from "react-spring";
@@ -13,7 +14,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
-  const [swiper, setSwiper] = useState<any>(null);
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const totalSlides = 3;
 
   const styles = useSpring({

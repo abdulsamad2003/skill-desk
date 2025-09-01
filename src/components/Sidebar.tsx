@@ -2,10 +2,6 @@
 
 import { Dispatch, SetStateAction } from "react";
 import CloseIcon from '@mui/icons-material/Close';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import AddIcon from '@mui/icons-material/Add';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
 
 interface SidebarProps {
   sidebar: boolean;

@@ -3,11 +3,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "bootstrap/dist/css/bootstrap.css";
 import "swiper/css";
-
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { useSpring, animated } from "react-spring";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { useState } from "react";
 import About from "./About";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -109,7 +106,7 @@ const HeroSection = () => {
                   </div>
                   <div className="slider__wrapper_2">
                     <p className="slider__subtitle slider__subtitle2">
-                      Our AI doesn't just deliver content — it creates an interactive learning journey built around the actual tools you'll use in the field. Whether you're upskilling or exploring a new role, every lesson adapts to your progress and profession.
+                      Our AI doesn&apos;t just deliver content — it creates an interactive learning journey built around the actual tools you&apos;ll use in the field. Whether you&apos;re upskilling or exploring a new role, every lesson adapts to your progress and profession.
                     </p>
                   </div>
                   <a className="button slider__button button--primary whitespace-nowrap" href="#">

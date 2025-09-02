@@ -1,6 +1,12 @@
 /* Hero Section/Slider Styles */
 .promo {
   position: relative;
+  padding-top: 60px; /* Add top padding for mobile */
+  height: 100%;
+  z-index: 1; /* Lower z-index than about section */
+  @media only screen and (min-width: 768px) {
+    padding-top: 0; /* Remove padding on desktop */
+  }
 }
 
 /* Swiper Navigation and Pagination Fixes */
@@ -153,7 +159,7 @@
   max-height: 118vh;
   width: 100%;
   position: relative;
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
 
   @media only screen and (max-width: 576px) {
@@ -200,6 +206,10 @@
     padding: 5% 5%;
     position: relative;
     z-index: 2;
+
+    @media only screen and (max-width: 767px) {
+      padding: 10% 5% 5% 5%; /* Add more top padding for mobile */
+    }
 
     &.second_container {
       @media only screen and (min-width: 768px) {
@@ -374,85 +384,7 @@
   }
 }
 
-.scroll__video {
-  position: relative;
-  width: 100%;
-  max-width: 290px;
-  height: 15vh;
-  overflow: hidden;
-  display: flex;
 
-  @media only screen and (min-width: 576px) {
-    max-width: 335px;
-    min-width: 335px;
-  }
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(56, 57, 118, 0.79);
-    z-index: 2;
-  }
-
-  &:hover {
-    img {
-      transform: scale(1.2);
-    }
-
-    .video-trigger {
-      opacity: 0.75;
-    }
-  }
-
-  .video-trigger {
-    color: #fff;
-    z-index: 2;
-    margin: auto;
-    transition: opacity 0.3s;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-
-    span {
-      transition: color 0.3s;
-      white-space: nowrap;
-      position: absolute;
-      left: 50px;
-
-      @media only screen and (min-width: 576px) {
-        left: 80px;
-      }
-    }
-
-    i {
-      position: absolute;
-      right: 50px;
-      color: #343877;
-      height: 45px;
-      width: 45px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 45px;
-      background-color: #fff;
-      margin-left: 20px;
-      transition: background-color 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      @media only screen and (min-width: 576px) {
-        right: 80px;
-      }
-    }
-  }
-}
 
 
 /* About Section - Styles moved to about.scss */

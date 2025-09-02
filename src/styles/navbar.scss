@@ -24,17 +24,17 @@
   }
 
   &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    // margin: 0 auto;
+    padding: 0 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 70px;
     width: 100%;
     @media (max-width: 991px) {
-      padding: 0 15px;
+      padding: 0 20px;
       height: 60px;
+
     }
   }
 

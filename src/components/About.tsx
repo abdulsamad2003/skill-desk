@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div>
+
       <section className="section about-us" id="about">
-        <div className="container">
+
           <div className="row align-items-center">
             <div className="col-lg-6 about__left">
               <div className="heading heading--primary">
@@ -59,9 +59,8 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        
       </section>
-    </div>
   );
 };
 

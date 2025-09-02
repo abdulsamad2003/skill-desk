@@ -160,7 +160,7 @@ const HeroSection = () => {
             </div>
           </div>
         </SwiperSlide>
-        <div className="custom-nav">
+        <div className="custom-nav d-none d-md-flex">
           <button
             className="custom-nav__button custom-nav__button--prev"
             onClick={goToPrevSlide}
@@ -194,9 +194,7 @@ const HeroSection = () => {
         </div>
       </Swiper>
 
-      <div className="about">
-        <About />
-      </div>
+   
     </section>
   );
 };

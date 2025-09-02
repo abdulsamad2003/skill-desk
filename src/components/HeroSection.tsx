@@ -8,9 +8,9 @@ import { useSpring, animated } from "react-spring";
 import { Autoplay } from "swiper/modules";
 import { useState } from "react";
 import Image from "next/image";
-import About from "./About";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import "../styles/hero-section.scss";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(1);

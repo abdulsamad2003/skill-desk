@@ -1,9 +1,10 @@
 "use client";
-import "../styles/navbar.scss";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
+import "../styles/navbar.scss";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);

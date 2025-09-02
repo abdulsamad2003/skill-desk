@@ -1,11 +1,5 @@
 // Main SCSS file - imports all component styles
 // This file should be imported in layout.tsx
-
-// Import component styles
-@use 'navbar.scss';
-@use 'sidebar.scss';
-@use 'hero-section.scss';
-@use 'about.scss';
 @use 'globals.css';
 @use 'Home.module.css';
 

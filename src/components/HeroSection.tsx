@@ -82,6 +82,13 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+          <button
+            className="custom-nav__button custom-nav__button--next"
+            onClick={goToNextSlide}
+            aria-label="Next slide"
+          >
+            <ChevronRightIcon style={{ color: "#efc940", fontSize: "30px" }} />
+          </button>
         </div>
       </div>
     </section>

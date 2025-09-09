@@ -1,68 +1,98 @@
-"use client";
+import React from 'react'
+import Image from 'next/image'
 
 const About = () => {
+  const features = [
+    {
+      number: "01",
+      title: "Video Tutorial",
+      description: "Lorem ipsum dolor amet consectetur"
+    },
+    {
+      number: "02", 
+      title: "Affordable Price",
+      description: "Lorem ipsum dolor amet consectetur"
+    },
+    {
+      number: "03",
+      title: "Life Time Support", 
+      description: "Lorem ipsum dolor amet consectetur"
+    },
+    {
+      number: "04",
+      title: "Exclusive Advisor",
+      description: "Lorem ipsum dolor amet consectetur"
+    }
+  ]
+
   return (
-    <div>
-      <section className="section about-us" id="about">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 about__left">
-              <div className="heading heading--primary">
-                <span className="heading__pre_title">About Us</span>
-                <h2 className="heading__title">
-                  Help is Our <span>Main Goal</span>
-                </h2>
-              </div>
-              <p>
-                <strong>
-                  Thresher shark rudd African lungfish silverside, Red salmon
-                  rockfish grunion, garpike zebra danio king-of-the-salmon banjo
-                  catfish."
-                </strong>
-              </p>
-              <p>
-                Sea chub demoiselle whalefish zebra lionfish mud cat pelican
-                eel. Minnow snoek icefish velvet-belly shark, California halibut
-                round stingray northern sea robin. Southern grayling trout-perch
-              </p>
-              <p>
-                Sharksucker sea toad candiru rocket danio tilefish stingray
-                deepwater stingray Sacramento splittail, Canthigaster rostrata.
-                Midshipman dartfish Modoc sucker, yellowtail kingfish basslet.
-                Buri chimaera triplespine northern sea robin zingel lancetfish
-                galjoen fish, catla wolffish, mosshead warbonnet
-              </p>
-              <button className="button">More About</button>
-            </div>
-            <div className="col-lg-6 col-xl-5 offset-xl-1">
-              <div className="info-box">
-                <img
-                  className="img--layout bg__image"
-                  src="img/about_layout.png"
-                  alt="img"
-                />
-                {/* <img className="img--bg upper__image" src="img/about-us.jpg" alt="img" /> */}
-                <div className="new__div">
-                  <h4 className="info-box__title">
-                    We are Awesome Volunteer Team
-                  </h4>
-                  <p>
-                    Gray eel-catfish longnose whiptail catfish smalleye
-                    squaretail queen danio unicorn fish shortnose greeneye
-                    fusilier fish silver carp nibbler sharksucker tench lookdown
-                    catfish
-                  </p>
-                  <a className="info-box__link" href="volunteer.html">
-                    Become a volunteer
-                  </a>
+    <section className="about-section">
+      <div className="about-container">
+        {/* Features Section */}
+        <div className="features-section">
+          <div className="features-header">
+            <h2 className="main-font features-title">Features</h2>
+            <h3 className="main-font features-subtitle">One Platform Many Course</h3>
+          </div>
+          
+          <div className="features-grid">
+            {features.map((feature, index) => (
+              <div key={index} className="feature-card">
+                <div className="feature-number main-font">{feature.number}</div>
+                <div className="feature-content">
+                  <h4 className="main-font feature-title">{feature.title}</h4>
+                  <p className="para-font feature-description">{feature.description}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* About Content Section */}
+        <div className="about-content-section">
+          <div className="about-content">
+            <div className="about-left">
+              <Image
+                src="/assets/about-images/about.png"
+                alt="About Us"
+                width={500}
+                height={600}
+                className="about-image"
+              />
+            </div>
+            
+            <div className="about-right">
+              <div className="about-text">
+                <h2 className="main-font about-title">About Us Education</h2>
+                <h3 className="main-font about-subtitle">Go Your Skill in Next Level</h3>
+                <p className="para-font about-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed turpis in arcu gravida faucibus euismod eget magna. Donec non justo ac libero pharetra congue.
+                </p>
+                
+                <div className="about-missions">
+                  <div className="mission-item">
+                    <h4 className="main-font mission-title">Our Success Mission</h4>
+                    <p className="para-font mission-description">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </div>
+                  
+                  <div className="mission-item">
+                    <h4 className="main-font mission-title">Our Success Mission</h4>
+                    <p className="para-font mission-description">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </div>
+                </div>
+                
+                <button className="main-font discover-btn">Discover More</button>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-  );
-};
+      </div>
+    </section>
+  )
+}
 
-export default About;
+export default About

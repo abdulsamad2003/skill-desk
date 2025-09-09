@@ -57,7 +57,7 @@ const Navbar = () => {
           <ul className="navbar__menu">
             {navLinks.map((link, index) => (
               <li key={index} className="navbar__item">
-                <a href={link.href} className="navbar__link">
+                <a href={link.href} className="main-font navbar__link">
                   {link.label}
                 </a>
               </li>
@@ -66,10 +66,10 @@ const Navbar = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="navbar__auth">
-            <a href="#" className="navbar__btn navbar__btn--login">
+            <a href="#" className="main-font navbar__btn navbar__btn--login">
               Login
             </a>
-            <a href="#" className="navbar__btn navbar__btn--signup">
+            <a href="#" className="main-font navbar__btn navbar__btn--signup">
               Sign Up
             </a>
           </div>

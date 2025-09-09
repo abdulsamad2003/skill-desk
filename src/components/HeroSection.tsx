@@ -1,200 +1,100 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperType } from "swiper";
-import "bootstrap/dist/css/bootstrap.css";
-import "swiper/css";
-import { useSpring, animated } from "react-spring";
-import { Autoplay } from "swiper/modules";
-import { useState } from "react";
 import Image from "next/image";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import "../styles/hero-section.scss";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(1);
-  const [swiper, setSwiper] = useState<SwiperType | null>(null);
-  const totalSlides = 3;
+  const [isVisible, setIsVisible] = useState(false);
 
-  const styles = useSpring({
-    to: [{ opacity: 1, marginTop: "30px" }],
-    from: { opacity: 0, marginTop: "80px" },
-    delay: 300,
-  });
-
-  const goToNextSlide = () => {
-    if (swiper) {
-      swiper.slideNext();
-    }
-  };
-
-  const goToPrevSlide = () => {
-    if (swiper) {
-      swiper.slidePrev();
-    }
-  };
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   return (
-    <section className="promo">
-      <Swiper
-        spaceBetween={30}
-        effect={"slide"}
-        navigation={false}
-        speed={1500}
-        modules={[Autoplay]}  
-        loop={true}
-        pagination={false}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        className="mySwiper"
-        onSwiper={setSwiper}
-        onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex + 1)}
-      >
-        <SwiperSlide>
-          <div className="slider">
-            <Image
-              className="slider_img"
-              src="/assets/top-courses/project-management.jpg"
-              alt="Project Management Course"
-              width={1200}
-              height={600}
-              priority
-            />
-            <div
-              className="slider_text_container_bg"
-              style={{ background: "rgba(41, 41, 41, 0.5)" }}
-            >
-              <animated.div style={styles}>
-                <div className="slider_text_container">
-                  <div className="slider__wrapper_1">
-                    <h2 className="slider__title slider__title1">
-                      Smarter Training
-                      <br />
-                      <span>Starts with AI</span>
-                    </h2>
-                  </div>
-                  <div className="slider__wrapper_2">
-                    <p className="slider__subtitle">
-                      Our AI automatically creates personalized learning paths that are aligned with your goals and industry needs. Each course is built around real-world tools — not simulations — so you’re not just learning theory, but actually building skills that translate directly to the workplace. It’s faster, smarter, and far more effective than traditional training.
-                    </p>
-                  </div>
-                  <a className="button slider__button button--primary whitespace-nowrap" href="#">
-                  Get Started Now
-                  </a>
-                </div>
-              </animated.div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slider">
-            <Image
-              className="slider_img"
-              src="/assets/top-courses/teams.jpg"
-              alt="Teams Collaboration Course"
-              width={1200}
-              height={600}
-            />
-            <div
-              className="slider_text_container_bg"
-              style={{ background: "rgba(10, 12, 11, 0.5)" }}
-            >
-              <animated.div style={styles}>
-                <div className="slider_text_container">
-                  <div className="slider__wrapper_1">
-                    <h2 className="slider__title slider__title1">
-                      AI-Crafted Learning
-                      <br />
-                      <span>for Hands-On Skills</span>
-                    </h2>
-                  </div>
-                  <div className="slider__wrapper_2">
-                    <p className="slider__subtitle slider__subtitle2">
-                      Our AI doesn&apos;t just deliver content — it creates an interactive learning journey built around the actual tools you&apos;ll use in the field. Whether you&apos;re upskilling or exploring a new role, every lesson adapts to your progress and profession.
-                    </p>
-                  </div>
-                  <a className="button slider__button button--primary whitespace-nowrap" href="#">
-                    Explore Courses
-                  </a>
-                </div>
-              </animated.div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slider">
-            <Image
-              className="slider_img"
-              src="/assets/top-courses/ui-ux-designer.jpg"
-              alt="UI/UX Design Course"
-              width={1200}
-              height={600}
-            />
-            <div
-              className="slider_text_container_bg"
-              style={{ background: "rgba(30,30,106,0.5)" }}
-            >
-              <animated.div style={styles}>
-                <div className="slider_text_container">
-                  <div className="slider__wrapper_1">
-                    <h2 className="slider__title slider__title1">
-                      AI-Generated Courses,
-                      <br />
-                      <span>Real-World Skills</span>
-                    </h2>
-                  </div>
-                  <div className="slider__wrapper_2">
-                    <p className="slider__subtitle slider__subtitle3">
-                    Our AI automatically builds custom learning paths based on your goals, experience, and industry needs. No more generic content — each course immerses you in the real software used by professionals, so you gain practical skills from day one.
-                    Train smarter, not harder — with tools that match the real world.
-                    </p>
-                  </div>
-                  <a className="button slider__button button--primary whitespace-nowrap " href="#">
-                  Explore Courses
-                  </a>
-                </div>
-              </animated.div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <div className="custom-nav d-none d-md-flex">
-          <button
-            className="custom-nav__button custom-nav__button--prev"
-            onClick={goToPrevSlide}
-            aria-label="Previous slide"
-          >
-            <ChevronLeftIcon style={{ color: "#efc940", fontSize: "30px" }} />
-          </button>
-          <div
-            className="custom-nav__pagination"
-            style={{ '--progress': (currentSlide / totalSlides) * 100 } as React.CSSProperties}
-          >
-            {currentSlide} / {totalSlides}
-            {/* Slide indicators */}
-            <div className="custom-nav__indicators">
-              {Array.from({ length: totalSlides }, (_, index) => (
-                <div
-                  key={index}
-                  className={`indicator ${index + 1 === currentSlide ? 'active' : ''}`}
-                  onClick={() => swiper?.slideTo(index)}
-                />
-              ))}
-            </div>
-          </div>
-          <button
-            className="custom-nav__button custom-nav__button--next"
-            onClick={goToNextSlide}
-            aria-label="Next slide"
-          >
-            <ChevronRightIcon style={{ color: "#efc940", fontSize: "30px" }} />
-          </button>
-        </div>
-      </Swiper>
+    <section className="hero-section">
+      {/* Background Shapes */}
+      <div className="hero-shapes">
+        {/* Shape 1 - Circle */}
+        <svg className="shape shape-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="#FFE4B8" opacity="0.3"/>
+        </svg>
+        
+        {/* Shape 2 - Triangle */}
+        <svg className="shape shape-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,90 10,90" fill="#B8E4FF" opacity="0.25"/>
+        </svg>
+        
+        {/* Shape 3 - Square */}
+        <svg className="shape shape-3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="20" width="60" height="60" rx="10" fill="#FFB8E4" opacity="0.2" transform="rotate(45 50 50)"/>
+        </svg>
+        
+        {/* Shape 4 - Hexagon */}
+        <svg className="shape shape-4" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" fill="#E4B8FF" opacity="0.3"/>
+        </svg>
+        
+        {/* Shape 5 - Star */}
+        <svg className="shape shape-5" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 60,40 90,40 65,60 75,90 50,70 25,90 35,60 10,40 40,40" fill="#B8FFE4" opacity="0.25"/>
+        </svg>
+        
+        {/* Shape 6 - Diamond */}
+        <svg className="shape shape-6" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 70,50 50,90 30,50" fill="#FFDFB8" opacity="0.2"/>
+        </svg>
+      </div>
 
-   
+      <div className="container">
+        <div className="hero-content">
+          {/* Left Content */}
+          <div className={`hero-left ${isVisible ? 'animate-in' : ''}`}>
+            <h5 className="hero-subtitle">Online E-Learning Courses</h5>
+            <h1 className="hero-title">
+              <span className="highlight">Creating</span> a Better Future through Education
+            </h1>
+            <p className="hero-description">
+              It is long established fact that reader distracted by the readable content.
+            </p>
+            <div className="hero-buttons">
+              <button className="btn btn-primary">Get Started</button>
+              <button className="btn btn-secondary">Learn More</button>
+            </div>
+          </div>
+
+          {/* Right Content */}
+          <div className={`hero-right ${isVisible ? 'animate-in' : ''}`}>
+            <div className="hero-image-wrapper">
+              <Image
+                src="/assets/top-courses/ui-ux-designer.jpg"
+                alt="E-Learning Education"
+                width={600}
+                height={500}
+                className="hero-image"
+                priority
+              />
+              
+              {/* Top Left Badge */}
+              <div className="badge badge-top-left">
+                <div className="badge-content">
+                  <span className="badge-number">1.5K+</span>
+                  <span className="badge-text">Students</span>
+                </div>
+              </div>
+              
+              {/* Bottom Right Badge */}
+              <div className="badge badge-bottom-right">
+                <div className="badge-content">
+                  <span className="badge-icon">⭐</span>
+                  <span className="badge-rating">4.9</span>
+                  <span className="badge-text">Rating</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

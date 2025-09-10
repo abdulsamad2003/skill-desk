@@ -47,11 +47,21 @@ const HeroSection = () => {
           <div className="hero-left">
             <h2 className="main-font hero-subtitle">Online E-Learning Courses</h2>
             <h1 className="main-font hero-title">
-              <span className="main-font highlight">Creating </span> a Better Future through Education
+              <span className="main-font highlight">Creating </span> Personalized Learning Powered by AI
             </h1>
             <p className="para-font hero-description">
               It is long established fact that reader distracted by the readable content.
             </p>
+            
+            {/* CTA Buttons */}
+            <div className="hero-cta">
+              <button className="cta-button cta-primary">
+                Start Free Trial
+              </button>
+              <button className="cta-button cta-secondary">
+                Book a Demo
+              </button>
+            </div>
           </div>
           
           <div className="hero-right">
@@ -82,13 +92,6 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <button
-            className="custom-nav__button custom-nav__button--next"
-            onClick={goToNextSlide}
-            aria-label="Next slide"
-          >
-            <ChevronRightIcon style={{ color: "#efc940", fontSize: "30px" }} />
-          </button>
         </div>
       </div>
     </section>

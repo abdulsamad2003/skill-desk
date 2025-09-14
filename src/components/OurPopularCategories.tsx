@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { 
   Settings, 
   BarChart3, 
@@ -64,7 +63,16 @@ const OurPopularCategories = () => {
   ];
 
 
-  const renderCategoryBox = (category: any) => {
+  interface Category {
+    id: string;
+    title: string;
+    icon: React.ComponentType<{ size: number }>;
+    iconColor: string;
+    courseCount: number;
+    description: string;
+  }
+
+  const renderCategoryBox = (category: Category) => {
     const IconComponent = category.icon;
     return (
       <div 

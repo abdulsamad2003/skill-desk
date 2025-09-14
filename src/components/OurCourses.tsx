@@ -7,6 +7,23 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import coursesData from '../data/courses.json'
 import "../styles/our-courses.scss";
 
+interface Course {
+  id: string;
+  title: string;
+  description: string;
+  thumbnail: string;
+  modules: number;
+  lessons: number;
+  duration: string;
+  difficulty: string;
+  enrolledCount: number;
+  rating: number;
+  instructor: string;
+  price: number;
+  isPopular: boolean;
+  skills: string[];
+}
+
 const OurCourses = () => {
   // Get most popular courses (isPopular: true)
   const popularCourses = coursesData.filter(course => course.isPopular);
@@ -79,7 +96,7 @@ const OurCourses = () => {
     }
   };
 
-  const renderCourseCard = (course: any, index: number) => (
+  const renderCourseCard = (course: Course) => (
     <div
       key={course.id}
       className="course-card"
@@ -192,7 +209,7 @@ const OurCourses = () => {
               >
                 {Array.from({ length: totalSlides }, (_, slideIndex) => (
                   <div key={slideIndex} className="carousel-slide">
-                    {getCoursesForSlide(slideIndex).map((course, index) => renderCourseCard(course, index))}
+                    {getCoursesForSlide(slideIndex).map((course) => renderCourseCard(course))}
                   </div>
                 ))}
               </div>

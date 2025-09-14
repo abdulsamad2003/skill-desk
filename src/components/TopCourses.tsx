@@ -13,7 +13,13 @@ const TopCourses = () => {
 
   return (
     <section className="top-courses">
-      <img className="top-courses__bg" src="/img/events_bg.png" alt="background" />
+      <Image 
+        className="top-courses__bg" 
+        src="/img/events_bg.png" 
+        alt="background" 
+        fill
+        priority={false}
+      />
       <div className="top-courses__container">
         <div className="top-courses__row top-courses__row--margin-bottom">
           <div className="top-courses__col top-courses__col--12">

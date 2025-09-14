@@ -45,14 +45,6 @@ const Solutions = () => {
     return () => clearInterval(timer)
   }, [progress, features.length, autoPlayInterval])
 
-  const getIcon = (index: number) => {
-    switch (index) {
-      case 0: return <Building2 size={24} />
-      case 1: return <GraduationCap size={24} />
-      case 2: return <Rocket size={24} />
-      default: return <Building2 size={24} />
-    }
-  }
 
   return (
     <section id="solutions" className="solutions-section">

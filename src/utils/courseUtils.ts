@@ -1,22 +1,26 @@
 import coursesData from '../data/courses.json';
 
 export interface Course {
-  id: number;
-  name: string;
+  id: string;
+  title: string;
   description: string;
-  category: string;
-  rating: number;
+  overview: string;
+  thumbnail: string;
+  modules: number;
+  lessons: number;
   duration: string;
-  level: string;
-  price: number;
-  instructor: string;
-  image: string;
-  students: number;
-  language: string;
-  format: string;
-  certificate: boolean;
-  prerequisites: string[];
+  difficulty: string;
+  enrolledCount: number;
+  completionRate: number;
+  rating: number;
+  department: string;
   skills: string[];
+  status: string;
+  createdAt: string;
+  dueDate: string | null;
+  instructor: string;
+  price: number;
+  isPopular: boolean;
 }
 
 export interface CourseCategory {
@@ -32,8 +36,8 @@ export interface CourseCategory {
 
 // Get all courses from JSON
 export const getAllCourses = (): Course[] => {
-  console.log('Loading courses from JSON:', coursesData.courses.length, 'courses found');
-  return coursesData.courses;
+  console.log('Loading courses from JSON:', coursesData.length, 'courses found');
+  return coursesData as Course[];
 };
 
 // Get courses grouped by category
@@ -42,7 +46,7 @@ export const getCoursesByCategory = (): CourseCategory[] => {
   const categoryMap = new Map<string, CourseCategory>();
 
   courses.forEach((course) => {
-    const categoryName = course.category;
+    const categoryName = course.department;
     
     if (!categoryMap.has(categoryName)) {
       categoryMap.set(categoryName, {
@@ -78,7 +82,7 @@ export const getTopCategories = (limit: number = 6): CourseCategory[] => {
 
 // Get courses by specific category
 export const getCoursesByCategoryName = (categoryName: string): Course[] => {
-  return getAllCourses().filter(course => course.category === categoryName);
+  return getAllCourses().filter(course => course.department === categoryName);
 };
 
 // Helper function to get category descriptions

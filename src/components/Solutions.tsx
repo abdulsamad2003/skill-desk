@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import { Building2, Check, GraduationCap, Rocket } from 'lucide-react'
+import { Check } from 'lucide-react'
 import "../styles/solutions.scss";
 
 const Solutions = () => {

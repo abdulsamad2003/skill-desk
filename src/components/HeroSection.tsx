@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-
+import "../styles/hero-section.scss"
 const HeroSection = () => {
   return (
     <section className="hero-section">

@@ -23,12 +23,13 @@
         font-weight: 500;
         color: #0C5BED;
         margin-bottom: 4px;
+        text-transform: uppercase;
       }
 
       .features-subtitle {
-        font-size: 1.54rem;
+        font-size: 2rem;
         color: #000;
-        font-weight: 500;
+        font-weight: 700;
       }
     }
 
@@ -55,6 +56,13 @@
         &:hover {
           border-color: #0C5BED;
           border-top-right-radius: 50px;
+
+          .feature-icon {
+            background: #0C5BED;
+            color: white;
+            
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+          }
         }
 
         &::before {
@@ -68,10 +76,9 @@
         }
 
         .feature-icon {
-          font-size: 2.5rem;
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #0C5BED, #667eea);
+          background: color-mix(in srgb, #0C5BED 15%, transparent);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -79,24 +86,9 @@
           margin-bottom: 20px;
           position: relative;
           z-index: 2;
-          box-shadow: 0 4px 15px rgba(12, 91, 237, 0.2);
+
           transition: all 0.3s ease;
-
-          .icon-emoji {
-            font-size: 1.8rem;
-            filter: grayscale(0);
-            transition: all 0.3s ease;
-          }
-
-          &:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(12, 91, 237, 0.3);
-            background: linear-gradient(135deg, #667eea, #0C5BED);
-
-            .icon-emoji {
-              transform: scale(1.1);
-            }
-          }
+          color: #0C5BED;
         }
 
         .feature-number {
@@ -128,18 +120,6 @@
             gap: 10px;
             flex-wrap: wrap;
 
-            .coming-soon-badge {
-              background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-              color: white;
-              font-size: 0.7rem;
-              font-weight: 600;
-              padding: 4px 8px;
-              border-radius: 12px;
-              text-transform: uppercase;
-              letter-spacing: 0.5px;
-              box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
-              animation: pulse 2s infinite;
-            }
           }
 
           .feature-description {
@@ -215,6 +195,7 @@
           font-weight: 500;
           color: #0C5BED;
           margin-bottom: 4px;
+          text-transform: uppercase;
         }
 
         .about-subtitle {
@@ -412,21 +393,5 @@
         }
       }
     }
-  }
-}
-
-// Animations
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
   }
 }

@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Sidebar from "./Sidebar";
+import { X } from "lucide-react";
 import "../styles/navbar.scss";
 
 const Navbar = () => {
-  const [sidebar, setSidebar] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,9 +19,31 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isMobileMenuOpen && !target.closest('.navbar__mobile-menu') && !target.closest('.navbar__mobile-toggle')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'hidden'; // Prevent body scroll
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { href: "#", label: "Home" },
-    { href: "#about", label: "Features" },
+    { href: "#courses", label: "Courses" },
     { href: "#", label: "About Us" },
     { href: "#", label: "Pricing" },
     { href: "#", label: "Resources" },
@@ -31,13 +53,11 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
-        {sidebar && <Sidebar sidebar={sidebar} setSidebar={setSidebar} />}
-        
         <div className="navbar__container">
           {/* Mobile Menu Button */}
           <button 
             className="navbar__mobile-toggle"
-            onClick={() => setSidebar(!sidebar)}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             <span></span>
@@ -74,6 +94,67 @@ const Navbar = () => {
               Login
             </a>
             <a href="#" className="main-font navbar__btn navbar__btn--signup">
+              Sign Up
+            </a>
+          </div>
+        </div>
+
+        {/* Mobile Overlay */}
+        <div 
+          className={`navbar__mobile-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+
+        {/* Mobile Side Menu */}
+        <div className={`navbar__mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          {/* Mobile Menu Header */}
+          <div className="navbar__mobile-menu-header">
+            <div className="navbar__mobile-logo">
+              <Image
+                src="/assets/skilldesk-logo.png"
+                width={120}
+                height={40}
+                alt="SkillDesk Logo"
+              />
+            </div>
+            <button 
+              className="navbar__mobile-close"
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          {/* Mobile Menu Links */}
+          <ul className="navbar__mobile-menu-list">
+            {navLinks.map((link, index) => (
+              <li key={index} className="navbar__item">
+                <a 
+                  href={link.href} 
+                  className="main-font navbar__link"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Auth Buttons */}
+          <div className="navbar__mobile-auth">
+            <a 
+              href="#" 
+              className="main-font navbar__btn navbar__btn--login"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Login
+            </a>
+            <a 
+              href="#" 
+              className="main-font navbar__btn navbar__btn--signup"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Sign Up
             </a>
           </div>

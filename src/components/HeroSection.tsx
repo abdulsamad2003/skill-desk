@@ -1,9 +1,69 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import "../styles/hero-section.scss"
 const HeroSection = () => {
+  // Reveal hooks for different elements
+  const subtitleReveal = useRevealOnScroll({ 
+    animationType: 'fadeUp', 
+    duration: 0.8, 
+    delay: 0.2 
+  });
+  
+  const titleReveal = useRevealOnScroll({ 
+    animationType: 'fadeUp', 
+    duration: 1, 
+    delay: 0.4 
+  });
+  
+  const descriptionReveal = useRevealOnScroll({ 
+    animationType: 'fadeUp', 
+    duration: 0.8, 
+    delay: 0.6 
+  });
+  
+  const ctaReveal = useRevealOnScroll({ 
+    animationType: 'fadeUp', 
+    duration: 0.8, 
+    delay: 0.8 
+  });
+  
+  const imageReveal = useRevealOnScroll({ 
+    animationType: 'fadeRight', 
+    duration: 1.2, 
+    delay: 0.4 
+  });
+  
+  const dataBoxReveal = useRevealOnScroll({ 
+    animationType: 'scale', 
+    duration: 0.8, 
+    delay: 1.2 
+  });
+  
+  const whiteBoxReveal = useRevealOnScroll({ 
+    animationType: 'scale', 
+    duration: 0.8, 
+    delay: 1.4 
+  });
+
   return (
     <section className="hero-section">
+      {/* Video Background */}
+      <div className="hero-video-container">
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="hero-video-overlay"></div>
+      </div>
+
       {/* Background shapes */}
       <div className="hero-shapes">
         {/* SVG Shapes */}
@@ -45,16 +105,34 @@ const HeroSection = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-left">
-            <h2 className="main-font hero-subtitle">Online E-Learning Courses</h2>
-            <h1 className="main-font hero-title">
+            <h2 
+              ref={subtitleReveal.ref as React.Ref<HTMLHeadingElement>}
+              className={`main-font hero-subtitle ${subtitleReveal.animationClass}`}
+              style={subtitleReveal.animationStyle}
+            >
+              Online E-Learning Courses
+            </h2>
+            <h1 
+              ref={titleReveal.ref as React.Ref<HTMLHeadingElement>}
+              className={`main-font hero-title ${titleReveal.animationClass}`}
+              style={titleReveal.animationStyle}
+            >
               <span className="main-font highlight">Creating </span> Personalized Learning Powered by AI
             </h1>
-            <p className="para-font hero-description">
+            <p 
+              ref={descriptionReveal.ref as React.Ref<HTMLParagraphElement>}
+              className={`para-font hero-description ${descriptionReveal.animationClass}`}
+              style={descriptionReveal.animationStyle}
+            >
               It is long established fact that reader distracted by the readable content.
             </p>
             
             {/* CTA Buttons */}
-            <div className="hero-cta">
+            <div 
+              ref={ctaReveal.ref as React.Ref<HTMLDivElement>}
+              className={`hero-cta ${ctaReveal.animationClass}`}
+              style={ctaReveal.animationStyle}
+            >
               <button className="cta-button cta-primary">
                 Start Free Trial
               </button>
@@ -65,7 +143,11 @@ const HeroSection = () => {
           </div>
           
           <div className="hero-right">
-            <div className="hero-image-container">
+            <div 
+              ref={imageReveal.ref as React.Ref<HTMLDivElement>}
+              className={`hero-image-container ${imageReveal.animationClass}`}
+              style={imageReveal.animationStyle}
+            >
               <Image
                 src="/assets/hero-images/hero-bg.jpg"
                 alt="Hero Image"
@@ -75,13 +157,21 @@ const HeroSection = () => {
               />
               
               {/* Top left data box */}
-              <div className="data-box data-box-top">
+              <div 
+                ref={dataBoxReveal.ref as React.Ref<HTMLDivElement>}
+                className={`data-box data-box-top ${dataBoxReveal.animationClass}`}
+                style={dataBoxReveal.animationStyle}
+              >
                 <div className="main-font data-number">2.5K+</div>
                 <div className="para-font data-label">Students</div>
               </div>
               
               {/* Bottom right white box */}
-              <div className="white-box white-box-bottom">
+              <div 
+                ref={whiteBoxReveal.ref as React.Ref<HTMLDivElement>}
+                className={`white-box white-box-bottom ${whiteBoxReveal.animationClass}`}
+                style={whiteBoxReveal.animationStyle}
+              >
                 <div className="box-content">
                   <div className="box-icon">📚</div>
                   <div className="box-text">

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import coursesData from '../data/courses.json'
@@ -14,7 +15,7 @@ interface Course {
   thumbnail: string;
   modules: number;
   lessons: number;
-  duration: string;
+  duration: string; 
   difficulty: string;
   enrolledCount: number;
   rating: number;
@@ -171,9 +172,9 @@ const OurCourses = () => {
           </div>
         </div>
 
-        <button className="main-font course-cta">
+        <Link href="/courses" className="main-font course-cta">
           Enroll Now
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -247,9 +248,9 @@ const OurCourses = () => {
 
         {/* View All Courses Button */}
         <div className="view-all-section">
-          <button className="main-font view-all-btn">
+          <Link href="/courses" className="main-font view-all-btn">
             View All Courses
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@
     .solutions-title {
       font-size: 1rem;
       font-weight: 500;
-      color: #0C5BED;
+      color: #FF7A7A;
       margin-bottom: 4px;
       text-transform: uppercase;
     }
@@ -77,13 +77,13 @@
         opacity: 1;
         border: 1px dashed #7d7d7d;
         &:hover {
-          background: rgba(12, 91, 237, 0.08);
+          background: rgba(255, 122, 122, 0.08);
           opacity: 1;
         }
 
         &.active {
           background: rgb(253, 253, 253);
-          border: 1px solid rgb(12, 91, 237);
+          border: 1px solid rgb(255, 122, 122);
           opacity: 1;
         }
 
@@ -120,8 +120,8 @@
           }
 
           &.active {
-            background: #0C5BED;
-            border-color: #0C5BED;
+            background: #FF7A7A;
+            border-color: #FF7A7A;
             color: white;
             
             .step-number {

@@ -1,0 +1,210 @@
+// Reveal Animation Styles
+// Base reveal classes
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+}
+
+.reveal-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+// Animation Types
+.reveal-fadeUp {
+  &.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  &.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-fadeDown {
+  &.reveal-hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  
+  &.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-fadeLeft {
+  &.reveal-hidden {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  
+  &.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal-fadeRight {
+  &.reveal-hidden {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  
+  &.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal-scale {
+  &.reveal-hidden {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  
+  &.reveal-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reveal-slideUp {
+  &.reveal-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  &.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Staggered animations for multiple items
+.reveal-item {
+  transition: all 0.6s ease-out;
+  
+  &.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  &.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Special reveal effects for hero section
+.hero-reveal {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.hero-reveal-hidden {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  
+  &.hero-reveal-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Hero title special animation
+.hero-title-reveal {
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.hero-title-reveal-hidden {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  
+  &.hero-title-reveal-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Hero image special animation
+.hero-image-reveal {
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.hero-image-reveal-hidden {
+    opacity: 0;
+    transform: translateX(50px) scale(0.9);
+  }
+  
+  &.hero-image-reveal-visible {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+// Data box animations
+.data-box-reveal {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.data-box-reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  
+  &.data-box-reveal-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// White box animations
+.white-box-reveal {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.white-box-reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  
+  &.white-box-reveal-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// CTA buttons animation
+.cta-reveal {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.cta-reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  &.cta-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .reveal-hidden {
+    transform: translateY(20px);
+  }
+  
+  .hero-reveal-hidden {
+    transform: translateY(20px) scale(0.98);
+  }
+  
+  .hero-title-reveal-hidden {
+    transform: translateY(30px) scale(0.95);
+  }
+  
+  .hero-image-reveal-hidden {
+    transform: translateX(30px) scale(0.95);
+  }
+}
+

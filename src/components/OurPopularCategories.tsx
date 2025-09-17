@@ -1,118 +1,120 @@
-import React from "react";
-import { 
-  Settings, 
-  BarChart3, 
-  Palette, 
-  Briefcase, 
-  Cloud, 
-  Shield 
-} from "lucide-react";
-import "../styles/our-popular-categories.scss";
+"use client"
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRevealOnScrollMultiple } from '../hooks/useRevealOnScroll'
+import { ArrowRight } from 'lucide-react'
+import "../styles/our-popular-categories.scss"
 
 const OurPopularCategories = () => {
-  // Popular categories data
-  const popularCategories = [
+  const categoriesReveal = useRevealOnScrollMultiple({ 
+    animationType: 'fadeUp', 
+    duration: 0.6, 
+    delay: 0.1, 
+    stagger: 0.1 
+  });
+
+  const categories = [
     {
-      id: "engineering",
-      title: "Engineering",
-      icon: Settings,
-      iconColor: "#3b82f6", // Blue
-      courseCount: 20,
-      description: "Software development, programming, and technical skills",
+      title: "Business & Marketing",
+      description: "Learn modern business strategies, digital marketing, entrepreneurship, and how AI can optimize your operations and reach.",
+      image: "/assets/top-courses/business-and-leader.jpg",
+      courses: "120+",
+      color: "#FF7A7A"
     },
     {
-      id: "data-science",
-      title: "Data Science",
-      icon: BarChart3,
-      iconColor: "#10b981", // Green
-      courseCount: 15,
-      description: "Analytics, machine learning, and data visualization",
+      title: "Data Science & AI",
+      description: "Master machine learning, artificial intelligence, data analysis, and cutting-edge technologies that drive innovation.",
+      image: "/assets/top-courses/data-science-and-ai.jpg",
+      courses: "95+",
+      color: "#4ECDCF"
     },
     {
-      id: "design",
-      title: "Design",
-      icon: Palette,
-      iconColor: "#f59e0b", // Orange
-      courseCount: 12,
-      description: "UI/UX design, graphic design, and creative skills",
+      title: "Software Development",
+      description: "Build applications, websites, and software solutions using the latest programming languages and development frameworks.",
+      image: "/assets/top-courses/software-development.jpg",
+      courses: "110+",
+      color: "#FF7A7A"
     },
     {
-      id: "business",
-      title: "Business",
-      icon: Briefcase,
-      iconColor: "#8b5cf6", // Purple
-      courseCount: 18,
-      description: "Management, marketing, and entrepreneurship",
+      title: "UI/UX Design",
+      description: "Create stunning user interfaces and experiences that engage users and drive business success through design thinking.",
+      image: "/assets/top-courses/ui-ux-designer.jpg",
+      courses: "75+",
+      color: "#4ECDCF"
     },
     {
-      id: "cloud",
       title: "Cloud Computing",
-      icon: Cloud,
-      iconColor: "#06b6d4", // Cyan
-      courseCount: 8,
-      description: "AWS, Azure, and cloud architecture",
+      description: "Learn cloud platforms, DevOps practices, and scalable infrastructure solutions for modern applications.",
+      image: "/assets/top-courses/cloud-computing.jpg",
+      courses: "65+",
+      color: "#FF7A7A"
     },
     {
-      id: "cybersecurity",
-      title: "Cybersecurity",
-      icon: Shield,
-      iconColor: "#ef4444", // Red
-      courseCount: 10,
-      description: "Security, ethical hacking, and risk management",
-    },
-  ];
-
-
-  interface Category {
-    id: string;
-    title: string;
-    icon: React.ComponentType<{ size: number }>;
-    iconColor: string;
-    courseCount: number;
-    description: string;
-  }
-
-  const renderCategoryBox = (category: Category) => {
-    const IconComponent = category.icon;
-    return (
-      <div 
-        key={category.id} 
-        className="category-box" 
-        style={{ '--icon-color': category.iconColor } as React.CSSProperties}
-      >
-        <div className="category-icon">
-          <IconComponent size={24} />
-        </div>
-
-        <h4 className="main-font category-title">{category.title}</h4>
-
-        <span className="total-categories">{category.courseCount || 0} Courses</span>
-      </div>
-    );
-  };
-
+      title: "Cyber Security",
+      description: "Protect digital assets and learn ethical hacking, security protocols, and risk management strategies.",
+      image: "/assets/top-courses/cyber-security.jpg",
+      courses: "85+",
+      color: "#4ECDCF"
+    }
+  ]
 
   return (
-    <section id="courses" className="our-categories-section">
+    <section className="our-categories-section">
       <div className="categories-container">
-        {/* Header */}
         <div className="categories-header">
-          <h2 className="main-font categories-title">Our Popular Categories</h2>
-          <h3 className="main-font categories-subtitle">
-            Explore our course categories
-          </h3>
+          <h2 className="main-font categories-title">Popular Categories</h2>
+          <h3 className="main-font categories-subtitle">Explore Our Course Categories</h3>
           <p className="para-font categories-description">
-            Explore our most popular course categories and find the perfect one for you.
+            Discover a wide range of courses designed to help you advance your career and acquire new skills.
           </p>
         </div>
 
-          <div className="categories-grid">
-            {popularCategories.map(renderCategoryBox)}
-          </div>
-      
+        <div className="categories-grid">
+          {categories.length > 0 ? (
+            categories.map((category, index) => (
+              <div 
+                key={index} 
+                className="category-card"
+              >
+                <div className="category-image-container">
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    width={300}
+                    height={200}
+                    className="category-image"
+                  />
+                  <div className="courses-count-badge">
+                    <span className="count-number">{category.courses}</span>
+                    <span className="count-label">Courses</span>
+                  </div>
+                </div>
+                
+                <div className="category-content">
+                  <h4 className="main-font category-title">{category.title}</h4>
+                  <p className="para-font category-description">{category.description}</p>
+                  
+                  <Link 
+                    href="/courses"
+                    className="explore-btn"
+                    style={{ '--accent-color': category.color } as React.CSSProperties}
+                  >
+                    <span>Explore Courses</span>
+                    <ArrowRight className="arrow-icon" />
+                  </Link>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="no-categories">
+              <p>No categories available</p>
+            </div>
+          )}
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default OurPopularCategories;
+export default OurPopularCategories

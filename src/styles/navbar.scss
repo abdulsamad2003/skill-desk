@@ -14,7 +14,7 @@
   &--scrolled {
     position: fixed;
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 20px rgba(12, 91, 237, 0.1);
+    box-shadow: 0 4px 20px rgba(255, 122, 122, 0.1);
     backdrop-filter: blur(20px);
   }
 
@@ -22,7 +22,7 @@
   @media (max-width: 991px) {
     position: fixed;
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 20px rgba(12, 91, 237, 0.1);
+    box-shadow: 0 4px 20px rgba(255, 122, 122, 0.1);
     backdrop-filter: blur(20px);
   }
 
@@ -74,7 +74,7 @@
       border-radius: 3px;
 
       @media (max-width: 991px) {
-        background: #0C5BED;
+        background: #FF7A7A;
       }
       
       @media (max-width: 480px) {
@@ -89,18 +89,18 @@
     }
 
     &:hover span {
-      background: #0C5BED;
+      background: #FF7A7A;
     }
   }
 
   /* Scrolled state - dark hamburger */
   &--scrolled &__mobile-toggle {
     span {
-      background: #0C5BED;
+      background: #FF7A7A;
     }
 
     &:hover {
-      background: rgba(12, 91, 237, 0.1);
+      background: rgba(255, 122, 122, 0.1);
     }
   }
 
@@ -160,7 +160,7 @@
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
     &:hover {
-      color: #0C5BED;
+      color: #FF7A7A;
       transform: translateY(-2px);
     }
 
@@ -172,7 +172,7 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(90deg, #0C5BED, #667eea);
+      background: linear-gradient(90deg, #FF7A7A, #4ECDCF);
       transition: width 0.3s ease;
       border-radius: 2px;
     }
@@ -188,7 +188,7 @@
     text-shadow: none;
 
     &:hover {
-      color: #0C5BED;
+      color: #FF7A7A;
     }
   }
 
@@ -225,30 +225,30 @@
 
       &:hover {
         background: rgba(255, 255, 255, 0.1);
-        border-color: #0C5BED;
-        color: #0C5BED;
-        box-shadow: 0 4px 4px rgba(12, 91, 237, 0.3);
+        border-color: #FF7A7A;
+        color: #FF7A7A;
+        box-shadow: 0 4px 4px rgba(255, 122, 122, 0.3);
       }
     }
     &--signup {
-      background: linear-gradient(135deg, #0C5BED, #667eea);
+      background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
       color: #fff;
-      border-color: #0C5BED;
+      border-color: #FF7A7A;
 
       &:hover {
-        background: linear-gradient(135deg, #667eea, #0C5BED);
-        box-shadow: 0 4px 4px rgba(12, 91, 237, 0.4);
+        background: linear-gradient(135deg, #4ECDCF, #FF7A7A);
+        box-shadow: 0 4px 4px rgba(255, 122, 122, 0.4);
       }
     }
   }
 
   /* Scrolled state - updated button colors */
   &--scrolled &__btn--login {
-    border-color: #0C5BED;
-    color: #0C5BED;
+    border-color: #FF7A7A;
+    color: #FF7A7A;
 
     &:hover {
-      background: #0C5BED;
+      background: #FF7A7A;
       color: #fff;
     }
   }
@@ -343,7 +343,7 @@
         
         &:hover {
           background: #f1f5f9;
-          color: #0C5BED;
+          color: #FF7A7A;
         }
       }
     }
@@ -366,11 +366,11 @@
           transition: all 0.3s ease;
           border-bottom: 1px solid #f1f5f9;
           
-          &:hover {
-            color: #0C5BED;
-            background: rgba(12, 91, 237, 0.05);
-            padding-left: 30px;
-          }
+        &:hover {
+          color: #FF7A7A;
+          background: rgba(255, 122, 122, 0.05);
+          padding-left: 30px;
+        }
         }
       }
     }
@@ -392,22 +392,22 @@
         
         &--login {
           background: transparent;
-          color: #0C5BED;
-          border: 2px solid #0C5BED;
+          color: #FF7A7A;
+          border: 2px solid #FF7A7A;
           
           &:hover {
-            background: #0C5BED;
+            background: #FF7A7A;
             color: white;
           }
         }
         
         &--signup {
-          background: linear-gradient(135deg, #0C5BED, #667eea);
+          background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
           color: white;
           border: none;
           
           &:hover {
-            background: linear-gradient(135deg, #667eea, #0C5BED);
+            background: linear-gradient(135deg, #4ECDCF, #FF7A7A);
           }
         }
       }

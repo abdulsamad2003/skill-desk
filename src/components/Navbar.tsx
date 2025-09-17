@@ -42,12 +42,12 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { href: "#", label: "Home" },
-    { href: "#courses", label: "Courses" },
-    { href: "#", label: "About Us" },
-    { href: "#", label: "Pricing" },
-    { href: "#", label: "Resources" },
-    { href: "#", label: "Contact" }
+    { href: "/", label: "Home" },
+    { href: "/courses", label: "Courses" },
+    { href: "#about", label: "About Us" },
+    { href: "#features", label: "Features" },
+    { href: "#solutions", label: "Solutions" },
+    { href: "#contact", label: "Contact" }
   ];
 
   return (
@@ -81,9 +81,9 @@ const Navbar = () => {
           <ul className="navbar__menu">
             {navLinks.map((link, index) => (
               <li key={index} className="navbar__item">
-                <a href={link.href} className="main-font navbar__link">
+                <Link href={link.href} className="main-font navbar__link">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -130,13 +130,13 @@ const Navbar = () => {
           <ul className="navbar__mobile-menu-list">
             {navLinks.map((link, index) => (
               <li key={index} className="navbar__item">
-                <a 
+                <Link 
                   href={link.href} 
                   className="main-font navbar__link"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

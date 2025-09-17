@@ -2,17 +2,10 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRevealOnScrollMultiple } from '../hooks/useRevealOnScroll'
 import { ArrowRight } from 'lucide-react'
 import "../styles/our-popular-categories.scss"
 
 const OurPopularCategories = () => {
-  const categoriesReveal = useRevealOnScrollMultiple({ 
-    animationType: 'fadeUp', 
-    duration: 0.6, 
-    delay: 0.1, 
-    stagger: 0.1 
-  });
 
   const categories = [
     {

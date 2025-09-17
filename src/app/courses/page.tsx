@@ -11,7 +11,6 @@ import {
   BookOpen, 
   PlayCircle,
   ChevronDown,
-  X,
   Grid,
   List
 } from 'lucide-react'
@@ -62,7 +61,7 @@ const CoursesPage = () => {
 
   // Filter and sort courses
   const filteredCourses = useMemo(() => {
-    let filtered = courses.filter(course => {
+    const filtered = courses.filter(course => {
       const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            course.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            course.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()))

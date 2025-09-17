@@ -1,9 +1,8 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import coursesData from '../data/courses.json'
 import "../styles/our-courses.scss";
@@ -28,9 +27,6 @@ interface Course {
 const OurCourses = () => {
   // Get most popular courses (isPopular: true)
   const popularCourses = coursesData.filter(course => course.isPopular);
-  
-  // Get all courses
-  const allCourses = coursesData;
 
   // Carousel state
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -41,6 +37,18 @@ const OurCourses = () => {
   const coursesPerSlide = 3
   const totalSlides = Math.ceil(popularCourses.length / coursesPerSlide)
 
+  // Handle slide change
+  const goToSlide = useCallback((slideIndex: number) => {
+    if (isTransitioning) return
+    
+    setIsTransitioning(true)
+    setCurrentSlide(slideIndex)
+    
+    setTimeout(() => {
+      setIsTransitioning(false)
+    }, 500)
+  }, [isTransitioning])
+
   // Auto-play carousel
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,19 +58,7 @@ const OurCourses = () => {
     }, 4000)
 
     return () => clearInterval(interval)
-  }, [currentSlide, totalSlides, isTransitioning])
-
-  // Handle slide change
-  const goToSlide = (slideIndex: number) => {
-    if (isTransitioning) return
-    
-    setIsTransitioning(true)
-    setCurrentSlide(slideIndex)
-    
-    setTimeout(() => {
-      setIsTransitioning(false)
-    }, 500)
-  }
+  }, [currentSlide, totalSlides, isTransitioning, goToSlide])
 
   // Next slide
   const nextSlide = () => {

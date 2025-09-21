@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import "../styles/about.scss";
-
+import { useRouter } from 'next/navigation';
 const About = () => {
   const aboutImageReveal = useRevealOnScroll({ 
     animationType: 'fadeLeft', 
@@ -16,6 +16,8 @@ const About = () => {
     duration: 0.8, 
     delay: 0.4 
   });
+
+  const router = useRouter();
 
   return (
     <section className="about-section">
@@ -65,7 +67,7 @@ const About = () => {
                   </div>
                 </div>
                 
-                <button className="main-font discover-btn">Discover More</button>
+                <button className="main-font discover-btn" onClick={() => router.push('/about')}>Discover More</button>
               </div>
             </div>
           </div>

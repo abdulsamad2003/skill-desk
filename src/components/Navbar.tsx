@@ -43,11 +43,11 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
     { href: "/courses", label: "Courses" },
-    { href: "#about", label: "About Us" },
-    { href: "#features", label: "Features" },
-    { href: "#solutions", label: "Solutions" },
-    { href: "#contact", label: "Contact" }
+    { href: "/blog", label: "Blog" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/contact", label: "Contact" }
   ];
 
   return (

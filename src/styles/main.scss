@@ -11,6 +11,20 @@
 @import 'reveal-animations.scss';
 @import 'footer.scss';
 
+// About page styles
+@import 'about-values.scss';
+@import 'timeline.scss';
+
+// Contact page styles
+@import 'contact-hero.scss';
+@import 'contact-form.scss';
+@import 'contact-info.scss';
+@import 'demo-booking.scss';
+@import 'demo-faq.scss';
+
+// UI Components styles
+@import 'sticky-scroll-reveal.scss';
+
 // Add global styles if needed
 * {
   box-sizing: border-box;

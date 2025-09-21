@@ -181,7 +181,7 @@ const OurCourses = () => {
         {/* Header */}
         <div className="courses-header">
           <h2 className="main-font courses-title">Our Courses</h2>
-          <h3 className="main-font courses-subtitle">Master New Skills with Expert-Led Training</h3>
+          <h3 className="main-font courses-subtitle">Most Popular Courses</h3>
           <p className="para-font courses-description">
             Choose from our comprehensive collection of courses designed by industry experts to advance your career and expand your knowledge.
           </p>
@@ -189,11 +189,6 @@ const OurCourses = () => {
 
         {/* Most Popular Courses */}
         <div className="popular-courses-section">
-          <div className="section-header">
-            <h4 className="main-font section-title">Most Popular Courses</h4>
-            <p className="para-font section-subtitle">Trending courses that our students love</p>
-          </div>
-          
           <div className="carousel-container">
             <div className="carousel-wrapper">
               <div 

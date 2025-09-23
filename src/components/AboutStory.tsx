@@ -35,9 +35,9 @@ const AboutStory = () => {
                 potential of artificial intelligence in education.
               </p>
               <p className="about-story-description para-font">
-                Today, we're proud to serve over 50,000 learners worldwide,
+                Today, we&apos;re proud to serve over 50,000 learners worldwide,
                 offering personalized learning experiences that adapt to each
-                individual's pace, style, and goals. Our platform combines
+                individual&apos;s pace, style, and goals. Our platform combines
                 cutting-edge AI technology with proven pedagogical methods to
                 create an engaging and effective learning environment.
               </p>

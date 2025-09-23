@@ -29,7 +29,7 @@ const AboutHero = () => {
             <p className="about-hero-description para-font">
               We are passionate about transforming education through cutting-edge
               AI technology, creating personalized learning experiences that
-              adapt to each learner's unique needs and goals. Our mission is to
+              adapt to each learner&apos;s unique needs and goals. Our mission is to
               make quality education accessible to everyone, everywhere.
             </p>
             <div className="about-hero-cta">

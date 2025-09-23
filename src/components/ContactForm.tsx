@@ -37,7 +37,7 @@ const ContactForm = () => {
     
     setIsSubmitting(false);
     setFormData({ name: '', email: '', subject: '', message: '' });
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    alert('Thank you for your message! We&apos;ll get back to you soon.');
   };
 
   return (
@@ -51,7 +51,7 @@ const ContactForm = () => {
           <div className="contact-form-header">
             <h2 className="contact-form-title main-font">Send us a Message</h2>
             <p className="contact-form-subtitle para-font">
-              Have a question or want to discuss a project? We'd love to hear from you.
+              Have a question or want to discuss a project? We&apos;d love to hear from you.
             </p>
           </div>
 

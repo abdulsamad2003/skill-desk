@@ -58,7 +58,7 @@ const DemoBooking = () => {
       preferredTime: '',
       message: ''
     });
-    alert('Demo scheduled successfully! We\'ll send you a confirmation email shortly.');
+    alert('Demo scheduled successfully! We&apos;ll send you a confirmation email shortly.');
   };
 
   const demoFeatures = [
@@ -111,7 +111,7 @@ const DemoBooking = () => {
           <div className="demo-booking-header">
             <h2 className="demo-booking-title main-font">Schedule Your Demo</h2>
             <p className="demo-booking-subtitle para-font">
-              Fill out the form below and we'll get back to you within 24 hours to confirm your demo slot.
+              Fill out the form below and we&apos;ll get back to you within 24 hours to confirm your demo slot.
             </p>
           </div>
 

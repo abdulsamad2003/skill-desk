@@ -46,7 +46,7 @@ const AboutTimeline = () => {
       content: (
         <div>
           <p>
-            Industry Recognition - Won "Best EdTech Innovation" award and reached 50,000+ active learners.
+            Industry Recognition - Won &quot;Best EdTech Innovation&quot; award and reached 50,000+ active learners.
           </p>
           <div className="grid">
             <Image

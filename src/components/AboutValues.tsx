@@ -66,7 +66,7 @@ const AboutValues = () => {
           <p className="about-values-description para-font">
             Our core values shape every decision we make and every feature we
             build. They guide us in creating meaningful learning experiences
-            that make a real difference in people's lives.
+            that make a real difference in people&apos;s lives.
           </p>
         </div>
 

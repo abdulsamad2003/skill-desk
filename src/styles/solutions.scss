@@ -1,6 +1,6 @@
 .solutions-section {
-  padding: 100px 0 0 0;
-  background: #f8fafc;
+  padding: 0;
+  background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
   position: relative;
   overflow: visible;
 
@@ -8,39 +8,6 @@
     margin: 0 auto;
     }
 
-  // Header Section
-  .solutions-header {
-    text-align: center;
-    margin-bottom: 80px;
-
-    .solutions-title {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #FF7A7A;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-    }
-
-    .solutions-subtitle {
-      font-size: 2rem;
-        color: #000;
-        font-weight: 700;
-
-      @media (max-width: 768px) {
-        font-size: 2rem;
-      }
-    }
-
-    .solutions-description {
-      line-height: 1.5; 
-      font-size: 0.89rem;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 400;
-      color: #7d7d7d;
-      max-width: 600px;
-      margin: 10px auto 0 auto;
-    }
-  }
 
   // Sticky Scroll Container - Full width, no box
   .solutions-sticky-container {
@@ -53,42 +20,21 @@
 // Responsive Design
 @media (max-width: 1024px) {
   .solutions-section {
-    padding: 80px 0;
-
-    .solutions-header {
-      margin-bottom: 60px;
-
-      .solutions-subtitle {
-        font-size: 2.2rem;
-      }
-    }
+    padding: 0;
   }
 }
 
 @media (max-width: 768px) {
   .solutions-section {
-    padding: 60px 0;
+    padding: 0;
 
     .solutions-container {
       padding: 0 15px;
     }
 
-    .solutions-header {
-      margin-bottom: 50px;
-
-      .solutions-subtitle {
-        font-size: 1.8rem;
-      }
-
-      .solutions-description {
-        font-size: 1rem;
-      }
-    }
-
     .solutions-sticky-container {
       margin-top: 0;
     }
-
   }
 }
 

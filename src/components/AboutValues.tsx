@@ -1,6 +1,6 @@
 "use client";
 
-
+import "../styles/about-values.scss";
 
 const AboutValues = () => {
   const values = [

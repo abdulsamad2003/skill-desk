@@ -3,7 +3,7 @@
 .reveal-hidden {
   opacity: 0;
   transform: translateY(30px);
-  visibility: hidden;
+  visibility: visible; // Changed from hidden to visible
 }
 
 .reveal-visible {

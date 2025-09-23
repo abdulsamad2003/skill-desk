@@ -66,7 +66,6 @@ const AboutStory = () => {
                   </div>
                 </div>
               </div>
-              <button className="discover-btn main-font">Learn More About Us</button>
             </div>
           </div>
         </div>

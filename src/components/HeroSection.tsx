@@ -3,7 +3,9 @@ import React from 'react'
 import Image from 'next/image'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import "../styles/hero-section.scss"
+import { useRouter } from 'next/navigation'
 const HeroSection = () => {
+  const router = useRouter()
   // Reveal hooks for different elements
   const subtitleReveal = useRevealOnScroll({ 
     animationType: 'fadeUp', 
@@ -133,10 +135,10 @@ const HeroSection = () => {
               className={`hero-cta ${ctaReveal.animationClass}`}
               style={ctaReveal.animationStyle}
             >
-              <button className="cta-button cta-primary">
+              <button onClick={() => router.push('/contact')} className="cta-button cta-primary">
                 Start Free Trial
               </button>
-              <button className="cta-button cta-secondary">
+              <button onClick={() => router.push('/contact')} className="cta-button cta-secondary">
                 Book a Demo
               </button>
             </div>

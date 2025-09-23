@@ -12,12 +12,12 @@ export const StickyScroll = ({
   content: {
     title: string;
     description: string;
-    content?: React.ReactNode | any;
+    content?: React.ReactNode;
   }[];
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start center", "end start"],
@@ -41,15 +41,15 @@ export const StickyScroll = ({
   });
 
   const backgroundColors = [
-    "#0f172a", // slate-900
-    "#000000", // black
-    "#171717", // neutral-900
+    "linear-gradient(135deg, #FF7A7A, #4ECDCF)", // Main theme gradient
+    "#f8fafc", // Light background
+    "#f1f5f9", // Slightly darker light background
   ];
-  const linearGradients = [
-    "linear-gradient(to bottom right, #FF7A7A, #4ECDCF)", // Your theme colors
-    "linear-gradient(to bottom right, #4ECDCF, #FF7A7A)", // Reversed theme colors
-    "linear-gradient(to bottom right, #FF7A7A, #4ECDCF)", // Your theme colors
-  ];
+  const linearGradients = React.useMemo(() => [
+    "linear-gradient(135deg, #FF7A7A, #4ECDCF)", // Your theme colors
+    "linear-gradient(135deg, #4ECDCF, #FF7A7A)", // Reversed theme colors
+    "linear-gradient(135deg, #FF7A7A, #4ECDCF)", // Your theme colors
+  ], []);
 
   const [backgroundGradient, setBackgroundGradient] = useState(
     linearGradients[0],
@@ -57,7 +57,7 @@ export const StickyScroll = ({
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+  }, [activeCard, linearGradients]);
 
   return (
     <motion.div
@@ -67,6 +67,15 @@ export const StickyScroll = ({
       className="sticky-scroll-container"
       ref={ref}
     >
+      {/* Header */}
+      <div className="solutions-header">
+        <h2 className="main-font solutions-title">Solutions</h2>
+        <h3 className="main-font solutions-subtitle">Tailored Learning for Every Audience</h3>
+        <p className="para-font solutions-description">
+          Discover how our AI-powered platform adapts to meet the unique needs of enterprises, universities, and individuals.
+        </p>
+      </div>
+      
       <div className="sticky-scroll-content">
         <div className="sticky-scroll-text">
           <div className="sticky-scroll-text-wrapper">

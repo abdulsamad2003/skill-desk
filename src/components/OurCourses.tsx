@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import coursesData from '../data/courses.json'
+import DemoBookingPopup from './DemoBookingPopup'
 import "../styles/our-courses.scss";
 
 interface Course {
@@ -32,6 +33,10 @@ const OurCourses = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const carouselRef = useRef<HTMLDivElement>(null)
+
+  // Demo popup state
+  const [isDemoPopupOpen, setIsDemoPopupOpen] = useState(false)
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null)
 
   // Calculate total slides needed (9 courses, 3 per slide = 3 slides)
   const coursesPerSlide = 3
@@ -91,6 +96,17 @@ const OurCourses = () => {
       default:
         return '#6b7280';
     }
+  };
+
+  // Handle demo popup
+  const handleEnrollClick = (course: Course) => {
+    setSelectedCourse(course);
+    setIsDemoPopupOpen(true);
+  };
+
+  const handleCloseDemoPopup = () => {
+    setIsDemoPopupOpen(false);
+    setSelectedCourse(null);
   };
 
   const renderCourseCard = (course: Course) => (
@@ -168,9 +184,12 @@ const OurCourses = () => {
           </div>
         </div>
 
-        <Link href="/courses" className="main-font course-cta">
+        <button 
+          onClick={() => handleEnrollClick(course)}
+          className="main-font course-cta"
+        >
           Enroll Now
-        </Link>
+        </button>
       </div>
     </div>
   );
@@ -244,6 +263,18 @@ const OurCourses = () => {
           </Link>
         </div>
       </div>
+
+      {/* Demo Booking Popup */}
+      <DemoBookingPopup
+        isOpen={isDemoPopupOpen}
+        onClose={handleCloseDemoPopup}
+        courseInfo={selectedCourse ? {
+          title: selectedCourse.title,
+          description: selectedCourse.description,
+          thumbnail: selectedCourse.thumbnail,
+          price: selectedCourse.price
+        } : undefined}
+      />
     </section>
   )
 }

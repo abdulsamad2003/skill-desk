@@ -525,20 +525,20 @@
 
     .course-card {
       background: white;
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
-      border: 1px solid #f0f0f0;
+      border: 1px solid #e5e7eb;
 
       &:hover {
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         transform: translateY(-2px);
       }
 
       .course-image {
         position: relative;
-        height: 200px;
+        height: 160px;
         overflow: hidden;
 
         .course-thumbnail {
@@ -549,17 +549,17 @@
 
         .popular-badge {
           position: absolute;
-          top: 12px;
-          left: 12px;
-          background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
+          top: 8px;
+          left: 8px;
+          background: #FF7A7A;
           color: white;
-          padding: 6px 12px;
-          border-radius: 20px;
-          font-size: 0.8rem;
+          padding: 4px 8px;
+          border-radius: 12px;
+          font-size: 0.7rem;
           font-weight: 600;
           display: flex;
           align-items: center;
-          gap: 4px;
+          gap: 3px;
         }
 
         .course-overlay {
@@ -568,7 +568,7 @@
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(0, 0, 0, 0.3);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -579,8 +579,8 @@
             background: rgba(255, 255, 255, 0.9);
             border: none;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -601,34 +601,36 @@
       }
 
       .course-content {
-        padding: 20px;
+        padding: 16px;
 
         .course-header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
 
           .category-badge {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.7rem;
+            padding: 3px 6px;
+            border-radius: 6px;
+            font-size: 0.65rem;
             font-weight: 600;
             color: white;
             text-transform: uppercase;
+            background: #6b7280;
           }
 
           .course-rating {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
 
             .star-icon {
               color: #ffc107;
+              font-size: 0.8rem;
             }
 
             .rating-text {
-              font-size: 0.9rem;
+              font-size: 0.8rem;
               font-weight: 600;
               color: #333;
             }
@@ -636,10 +638,10 @@
         }
 
         .course-title {
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           font-weight: 600;
           color: #333;
-          margin: 0 0 8px 0;
+          margin: 0 0 6px 0;
           line-height: 1.3;
           display: -webkit-box;
           -webkit-line-clamp: 2;
@@ -649,10 +651,10 @@
         }
 
         .course-description {
-          color: #666;
-          font-size: 0.9rem;
-          line-height: 1.5;
-          margin: 0 0 15px 0;
+          color: #6b7280;
+          font-size: 0.85rem;
+          line-height: 1.4;
+          margin: 0 0 12px 0;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           line-clamp: 2;
@@ -662,19 +664,20 @@
 
         .course-meta {
           display: flex;
-          gap: 15px;
-          margin-bottom: 15px;
+          gap: 12px;
+          margin-bottom: 12px;
           flex-wrap: wrap;
 
           .meta-item {
             display: flex;
             align-items: center;
-            gap: 4px;
-            font-size: 0.8rem;
-            color: #666;
+            gap: 3px;
+            font-size: 0.75rem;
+            color: #6b7280;
 
             svg {
               color: #FF7A7A;
+              font-size: 0.8rem;
             }
           }
         }
@@ -682,15 +685,15 @@
         .course-skills {
           display: flex;
           flex-wrap: wrap;
-          gap: 6px;
-          margin-bottom: 15px;
+          gap: 4px;
+          margin-bottom: 12px;
 
           .skill-tag {
-            background: #f0f0f0;
-            color: #666;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
+            background: #f3f4f6;
+            color: #6b7280;
+            padding: 3px 6px;
+            border-radius: 6px;
+            font-size: 0.7rem;
             font-weight: 500;
 
             &.more {
@@ -704,19 +707,19 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 15px;
-          padding-top: 15px;
-          border-top: 1px solid #f0f0f0;
+          margin-bottom: 12px;
+          padding-top: 12px;
+          border-top: 1px solid #f3f4f6;
 
           .course-instructor {
             .instructor-label {
-              font-size: 0.8rem;
-              color: #666;
-              margin-right: 4px;
+              font-size: 0.7rem;
+              color: #6b7280;
+              margin-right: 3px;
             }
 
             .instructor-name {
-              font-size: 0.8rem;
+              font-size: 0.75rem;
               color: #333;
               font-weight: 500;
             }
@@ -724,7 +727,7 @@
 
           .course-price {
             .price {
-              font-size: 1.3rem;
+              font-size: 1.1rem;
               font-weight: 700;
               color: #FF7A7A;
             }
@@ -733,18 +736,18 @@
 
         .enroll-btn {
           width: 100%;
-          padding: 12px;
-          background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
+          padding: 10px;
+          background: #FF7A7A;
           color: white;
           border: none;
-          border-radius: 8px;
-          font-size: 0.9rem;
+          border-radius: 6px;
+          font-size: 0.85rem;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
 
           &:hover {
-            background: linear-gradient(135deg, #e66a6a, #3bb5b7);
+            background: #e66a6a;
             transform: translateY(-1px);
           }
         }

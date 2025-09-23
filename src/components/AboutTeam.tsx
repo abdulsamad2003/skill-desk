@@ -53,6 +53,30 @@ const AboutTeam: React.FC = () => {
         twitter: "#",
         facebook: "#"
       }
+    },
+    {
+      id: 5,
+      name: "Lisa Wang",
+      position: "Head of Marketing",
+      description: "Strategic marketing leader with expertise in digital growth and brand development in the education sector.",
+      image: "/assets/images/instructor-1.jpg",
+      social: {
+        linkedin: "#",
+        twitter: "#",
+        facebook: "#"
+      }
+    },
+    {
+      id: 6,
+      name: "James Wilson",
+      position: "Lead Developer",
+      description: "Full-stack developer passionate about creating robust, scalable solutions that enhance the learning experience.",
+      image: "/assets/images/instructor-2.jpg",
+      social: {
+        linkedin: "#",
+        twitter: "#",
+        facebook: "#"
+      }
     }
   ];
 
@@ -104,19 +128,6 @@ const AboutTeam: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="about-team-cta">
-          <div className="team-cta-content">
-            <h3 className="team-cta-title">Join Our Team</h3>
-            <p className="team-cta-description">
-              Are you passionate about education and technology? We're always looking for talented 
-              individuals to join our mission of transforming learning experiences.
-            </p>
-            <button className="team-cta-button">
-              View Open Positions
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

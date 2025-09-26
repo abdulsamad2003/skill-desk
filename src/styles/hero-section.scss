@@ -52,8 +52,8 @@
       height: 100%;
       background: linear-gradient(
         135deg,
-        rgba(255, 122, 122, 0.8) 0%,
-        rgba(78, 205, 207, 0.6) 50%,
+        rgba(255, 122, 122, 0.4) -4%,
+        rgba(78, 205, 207, 0.3) 50%,
         rgba(0, 41, 53, 0.9) 100%
       );
       z-index: 1;
@@ -184,13 +184,13 @@
     }
     
     .hero-subtitle {
-      color: #FF7A7A;
+      color: #ffffff;
       font-size: 16px;
       font-weight: 600;
       margin-bottom: 20px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       
       @media (max-width: 768px) {
         font-size: 14px;
@@ -212,8 +212,8 @@
       text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 
       .highlight {
-        color: #4ECDCF;
-        text-shadow: 0 4px 8px rgba(78, 205, 207, 0.3);
+        color: rgb(78, 205, 207);
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
       }
 
       @media (max-width: 1200px) {
@@ -320,12 +320,12 @@
         }
 
         &.cta-primary {
-          background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
+          background:  rgb(78, 205, 207);
           color: white;
-
+          border: 2px solid #fff;
           &:hover {
-            box-shadow: 0 4px 4px rgba(255, 122, 122, 0.4);
-            background: linear-gradient(135deg, #4ECDCF, #FF7A7A);
+            box-shadow: 0 4px 4px rgb(78, 205, 207);
+            background:  rgb(78, 205, 207);
           }
 
           &:active {
@@ -336,14 +336,14 @@
         &.cta-secondary {
           background: transparent;
           color: white;
-          border: 2px solid #4ECDCF;
+          border: 2px solid rgb(78, 205, 207);  
           backdrop-filter: blur(10px);
+          // background: linear-gradient(135deg, #fff, #695acd28);
 
           &:hover {
-            background: rgba(78, 205, 207, 0.2);
-            border-color: #4ECDCF;
-            box-shadow: 0 4px 20px rgba(78, 205, 207, 0.3);
-            color: #4ECDCF;
+            background: rgba(135, 206, 235, 0.2);
+            border-color: rgb(78, 205, 207);
+            box-shadow: 0 4px 4px rgb(78, 205, 207);
           }
 
           &:active {

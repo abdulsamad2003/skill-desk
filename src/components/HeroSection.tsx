@@ -84,15 +84,7 @@ const HeroSection = () => {
           </svg>
         </div>
 
-        {/* Custom Shape Images */}
-        <div className="shape custom-shape custom-shape-1">
-          <Image
-            src="/assets/my-shape.png"
-            alt="Custom Shape 1"
-            width={120}
-            height={120}
-          />
-        </div>
+
 
         <div className="shape custom-shape custom-shape-2">
           <Image

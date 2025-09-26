@@ -67,13 +67,9 @@ const Navbar = () => {
 
           {/* Logo */}
           <div className="navbar__logo">
-            <Link href="/">
-              <Image
-                src="/assets/skilldesk-logo.png"
-                width={140}
-                height={50}
-                alt="SkillDesk Logo"
-              />
+            <Link href="/" className="navbar__logo-text">
+              <span className="navbar__logo-main">Skill</span>
+              <span className="navbar__logo-accent">Desk</span>
             </Link>
           </div>
 
@@ -110,12 +106,10 @@ const Navbar = () => {
           {/* Mobile Menu Header */}
           <div className="navbar__mobile-menu-header">
             <div className="navbar__mobile-logo">
-              <Image
-                src="/assets/skilldesk-logo.png"
-                width={120}
-                height={40}
-                alt="SkillDesk Logo"
-              />
+              <Link href="/" className="navbar__logo-text">
+                <span className="navbar__logo-main">Skill</span>
+                <span className="navbar__logo-accent">Desk</span>
+              </Link>
             </div>
             <button 
               className="navbar__mobile-close"

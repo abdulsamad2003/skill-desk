@@ -116,15 +116,42 @@
     a {
       display: flex;
       align-items: center;
+      text-decoration: none;
     }
 
-    img {
-      max-height: 40px;
-      width: auto;
+    &-text {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 2px;
       
       @media (max-width: 480px) {
-        max-height: 35px;
+        font-size: 24px;
       }
+    }
+
+    &-main {
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    &-accent {
+      color: rgb(78, 205, 207);
+      text-shadow: 0 2px 4px rgba(78, 205, 207, 0.3);
+    }
+  }
+
+  /* Scrolled state - dark logo */
+  &--scrolled &__logo {
+    &-main {
+      color: #333;
+      text-shadow: none;
+    }
+
+    &-accent {
+      color: rgb(78, 205, 207);
+      text-shadow: 0 2px 4px rgba(78, 205, 207, 0.2);
     }
   }
 
@@ -208,7 +235,7 @@
 
   &__btn {
     text-decoration: none;
-    padding: 6px 28px;
+    padding: 8px 24px;
     border-radius: 25px;
     font-weight: 600;
     font-size: 14px;
@@ -221,35 +248,48 @@
     &--login {
       background: transparent;
       color: #fff;
-      border-color: rgba(255, 255, 255, 0.3);
+      border: 2px solid rgb(78, 205, 207);
+      backdrop-filter: blur(10px);
 
       &:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #FF7A7A;
-        color: #FF7A7A;
-        box-shadow: 0 4px 4px rgba(255, 122, 122, 0.3);
+        background: rgba(78, 205, 207, 0.2);
+        border-color: rgb(78, 205, 207);
+        box-shadow: 0 4px 4px rgb(78, 205, 207);
+        color: rgb(78, 205, 207);
       }
     }
     &--signup {
-      background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
-      color: #fff;
-      border-color: #FF7A7A;
+      background: rgb(78, 205, 207);
+      color: white;
+      border: 2px solid #fff;
 
       &:hover {
-        background: linear-gradient(135deg, #4ECDCF, #FF7A7A);
-        box-shadow: 0 4px 4px rgba(255, 122, 122, 0.4);
+        box-shadow: 0 4px 4px rgb(78, 205, 207);
+        background: rgb(78, 205, 207);
+        transform: translateY(-1px);
       }
     }
   }
 
   /* Scrolled state - updated button colors */
   &--scrolled &__btn--login {
-    border-color: #FF7A7A;
-    color: #FF7A7A;
+    border-color: rgb(78, 205, 207);
+    color: rgb(78, 205, 207);
 
     &:hover {
-      background: #FF7A7A;
+      background: rgb(78, 205, 207);
       color: #fff;
+    }
+  }
+
+  &--scrolled &__btn--signup {
+    background: rgb(78, 205, 207);
+    color: white;
+    border: 2px solid rgb(78, 205, 207);
+
+    &:hover {
+      box-shadow: 0 4px 4px rgb(78, 205, 207);
+      background: rgb(78, 205, 207);
     }
   }
 
@@ -325,9 +365,8 @@
       border-bottom: 1px solid #f1f5f9;
       
       .navbar__mobile-logo {
-        img {
-          max-height: 35px;
-          width: auto;
+        .navbar__logo-text {
+          font-size: 24px;
         }
       }
       
@@ -392,22 +431,23 @@
         
         &--login {
           background: transparent;
-          color: #FF7A7A;
-          border: 2px solid #FF7A7A;
+          color: rgb(78, 205, 207);
+          border: 2px solid rgb(78, 205, 207);
           
           &:hover {
-            background: #FF7A7A;
+            background: rgb(78, 205, 207);
             color: white;
           }
         }
         
         &--signup {
-          background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
+          background: rgb(78, 205, 207);
           color: white;
-          border: none;
+          border: 2px solid rgb(78, 205, 207);
           
           &:hover {
-            background: linear-gradient(135deg, #4ECDCF, #FF7A7A);
+            box-shadow: 0 4px 4px rgb(78, 205, 207);
+            background: rgb(78, 205, 207);
           }
         }
       }
@@ -435,8 +475,8 @@
       padding: 15px;
       
       .navbar__mobile-logo {
-        img {
-          max-height: 30px;
+        .navbar__logo-text {
+          font-size: 20px;
         }
       }
       

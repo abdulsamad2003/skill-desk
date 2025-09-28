@@ -40,8 +40,8 @@
     .feature-card {
       background: white;
       padding: 40px 30px;
-      border-radius: 5px;
-      border: 0.1px solid #e0e0e08c;
+      border-radius: 15px;
+      border: 1px solid rgba(224, 224, 224, 0.5);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
@@ -49,18 +49,8 @@
       flex-direction: column;
       align-items: flex-start;
       text-align: left;
-
-      &:hover {
-        border-color: #FF7A7A;
-        border-top-right-radius: 50px;
-
-        .feature-icon {
-          background: #FF7A7A;
-          color: white;
-          
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-      }
+      height: 100%;
+      cursor: pointer;
 
       &::before {
         content: '';
@@ -70,6 +60,43 @@
         width: 100%;
         height: 4px;
         background: linear-gradient(90deg, #FF7A7A, #4ECDCF);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #FF7A7A, #4ECDCF);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+
+      &:hover {
+        box-shadow: 0 10px 30px rgba(255, 122, 122, 0.2);
+        border-color: transparent;
+
+        &::after {
+          opacity: 1;
+        }
+
+        .feature-icon {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          backdrop-filter: blur(10px);
+        }
+
+        .feature-number {
+          color: rgba(255, 255, 255, 0.3);
+        }
+
+        .feature-title {
+          color: white;
+        }
+
+        .feature-description {
+          color: rgba(255, 255, 255, 0.9);
+        }
       }
 
       .feature-icon {
@@ -83,7 +110,6 @@
         margin-bottom: 20px;
         position: relative;
         z-index: 2;
-
         transition: all 0.3s ease;
         color: #FF7A7A;
       }
@@ -98,6 +124,7 @@
         top: 20px;
         right: 30px;
         z-index: 1;
+        transition: all 0.3s ease;
       }
 
       .feature-content {
@@ -116,7 +143,7 @@
           align-items: center;
           gap: 10px;
           flex-wrap: wrap;
-
+          transition: all 0.3s ease;
         }
 
         .feature-description {
@@ -124,6 +151,7 @@
           line-height: 1.6;
           font-size: 0.95rem;
           margin-bottom: 0;
+          transition: all 0.3s ease;
         }
       }
     }
@@ -138,6 +166,10 @@
     .features-grid {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
+
+      .feature-card {
+        padding: 35px 25px;
+      }
     }
   }
 }

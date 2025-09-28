@@ -237,7 +237,7 @@
     }
 
     .hero-description {
-      color: rgba(255, 255, 255, 0.9);
+      color: white;
       font-size: 14px;
       line-height: 1.6;
       margin-bottom: 40px;
@@ -614,9 +614,10 @@
       .hero-video-overlay {
         background: linear-gradient(
           135deg,
-          rgba(255, 122, 122, 0.9) 0%,
-          rgba(78, 205, 207, 0.7) 50%,
-          rgba(0, 41, 53, 0.95) 100%
+          135deg,
+          rgba(255, 122, 122, 0.4) -4%,
+          rgba(78, 205, 207, 0.3) 50%,
+          rgba(0, 41, 53, 0.9) 100%
         );
       }
     }
@@ -629,9 +630,10 @@
       .hero-video-overlay {
         background: linear-gradient(
           135deg,
-          rgba(255, 122, 122, 0.95) 0%,
-          rgba(78, 205, 207, 0.8) 50%,
-          rgba(0, 41, 53, 0.98) 100%
+          135deg,
+          rgba(255, 122, 122, 0.4) -4%,
+          rgba(78, 205, 207, 0.3) 50%,
+          rgba(0, 41, 53, 0.9) 100%
         );
       }
     }

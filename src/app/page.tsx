@@ -7,6 +7,7 @@ import Solutions from "@/components/Solutions";
 import OurCourses from "@/components/OurCourses";
 import OurPopularCategories from "@/components/OurPopularCategories";
 import WorkingProcess from "@/components/WorkingProcess";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -15,13 +16,14 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <LogoScroller />
         <About />
         <Features />
         <WorkingProcess />
         <OurPopularCategories />  
         <OurCourses />
+        <Testimonials />
         <Solutions />
-        <LogoScroller />
       </main>
       <Footer />
     </>

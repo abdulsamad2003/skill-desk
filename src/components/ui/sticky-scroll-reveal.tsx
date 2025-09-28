@@ -25,8 +25,8 @@ export const StickyScroll = ({
   const cardLength = content.length;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Adjust breakpoints to trigger earlier
-    const cardsBreakpoints = content.map((_, index) => (index + 0.3) / (cardLength + 0.6));
+    // Improved breakpoints for better scrolling experience
+    const cardsBreakpoints = content.map((_, index) => (index + 0.5) / (cardLength + 1));
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
         const distance = Math.abs(latest - breakpoint);
@@ -84,9 +84,15 @@ export const StickyScroll = ({
                 <motion.h2
                   initial={{
                     opacity: 0,
+                    y: 20,
                   }}
                   animate={{
-                    opacity: activeCard === index ? 1 : 0.3,
+                    opacity: activeCard === index ? 1 : 0.4,
+                    y: activeCard === index ? 0 : 10,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
                   }}
                   className="sticky-scroll-title main-font"
                 >
@@ -95,9 +101,16 @@ export const StickyScroll = ({
                 <motion.p
                   initial={{
                     opacity: 0,
+                    y: 20,
                   }}
                   animate={{
-                    opacity: activeCard === index ? 1 : 0.3,
+                    opacity: activeCard === index ? 1 : 0.4,
+                    y: activeCard === index ? 0 : 10,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                    delay: 0.1,
                   }}
                   className="sticky-scroll-description para-font"
                 >

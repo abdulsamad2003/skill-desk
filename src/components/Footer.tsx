@@ -1,77 +1,252 @@
-"use client"
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
-import { Mail, Phone, MapPin } from 'lucide-react'
-import "../styles/footer.scss"
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear()
+const Footer = ({ footer }: { footer?: number }) => {
+  switch (footer) {
+    case 4:
+      return <Footer4 />;
+    default:
+      return <Footer4 />;
+  }
+};
 
-  return (
-    <footer className="footer">
-      <div className="footer-container">
-        {/* Main Footer Content */}
-        <div className="footer-main">
-          {/* Brand Section */}
-          <div className="footer-brand">
-            <div className="brand-logo">
-            <Image
-                src="/assets/skilldesk-logo.png"
-                width={120}
-                height={40}
-                alt="SkillDesk Logo"
-              />
+export default Footer;
+
+const Footer4 = () => {
+    return (
+      <footer className="main-footer footer-four bg-black rel z-1">
+        <div className="container pb-45">
+          <div className="footer-cta pt-50 pb-20 text-white">
+            <div
+              className="logo"
+              data-aos="fade-left"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              <Link href="/">
+                <img src="/images/logos/logo4.png" alt="Logo" />
+              </Link>
             </div>
-            <p className="brand-description">
-              Empowering professionals with cutting-edge skills through our comprehensive learning platform.
-            </p>
+            <h3
+              data-aos="fade-right"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              Ready to Enroll Our Course?
+            </h3>
+            <Link
+              href="contact"
+              className="theme-btn style-two"
+              data-aos="fade-right"
+              data-aos-duration={1500}
+              data-aos-offset={50}
+            >
+              Enroll Now <i className="far fa-arrow-right" />
+            </Link>
           </div>
-
-          {/* Quick Links */}
-          <div className="footer-links">
-            <h4 className="link-title">Quick Links</h4>
-            <ul className="link-list">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/courses">Courses</Link></li>
-              <li><Link href="#about">About</Link></li>
-              <li><Link href="#contact">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="footer-contact">
-            <h4 className="link-title">Contact</h4>
-            <div className="contact-info">
-              <div className="contact-item">
-                <Mail size={16} />
-                <span>support@skilldesk.com</span>
-              </div>
-              <div className="contact-item">
-                <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="contact-item">
-                <MapPin size={16} />
-                <span>123 Learning Street</span>
+          <hr />
+        </div>
+        <div className="container">
+          <div className="row justify-content-between">
+            <div className="col-lg-4 col-sm-6">
+              <div
+                className="footer-widget widget-newsletter"
+                data-aos="fade-up"
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <h3>Subscribe Newsletter</h3>
+                <p>Please enter your email and get your answer</p>
+                <form className="newsletter-form style-two mt-30" action="#">
+                  <input
+                    id="email-address"
+                    type="email"
+                    placeholder="Email Address"
+                    required
+                  />
+                  <button type="submit">
+                    <i className="far fa-arrow-right" />
+                  </button>
+                </form>
+                <ul className="icon-list style-two mt-25">
+                  <li>
+                    <i className="fal fa-check" /> 7-day free trial
+                  </li>
+                  <li>
+                    <i className="fal fa-check" /> No credit card required
+                  </li>
+                </ul>
               </div>
             </div>
+            <div className="col-xl-2 col-lg-3 col-sm-4 col-6">
+              <div
+                className="footer-widget widget-links"
+                data-aos="fade-up"
+                data-aos-delay={50}
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <h6 className="footer-title">Courses</h6>
+                <ul>
+                  <li>
+                    <Link href="contact">Web Design</Link>
+                  </li>
+                  <li>
+                    <Link href="contact">Digital Marketing</Link>
+                  </li>
+                  <li>
+                    <Link href="contact">Apps Development</Link>
+                  </li>
+                  <li>
+                    <Link href="contact">Graphics Design</Link>
+                  </li>
+                  <li>
+                    <Link href="contact">Computer Science</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-xl-2 col-lg-3 col-sm-4 col-6">
+              <div
+                className="footer-widget widget-links"
+                data-aos="fade-up"
+                data-aos-delay={100}
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <h6 className="footer-title">Quick Link</h6>
+                <ul>
+                  <li>
+                    <Link href="services">Features</Link>
+                  </li>
+                  <li>
+                    <Link href="pricing">Pricing Plan</Link>
+                  </li>
+                  <li>
+                    <Link href="about">Best Program</Link>
+                  </li>
+                  <li>
+                    <Link href="contact">Press Kit</Link>
+                  </li>
+                  <li>
+                    <Link href="about">About Company</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-sm-6 order-xl-2">
+              <div
+                className="footer-widget widget-gallery"
+                data-aos="fade-up"
+                data-aos-delay={150}
+                data-aos-duration={1500}
+                data-aos-offset={50}
+              >
+                <h6 className="footer-title">Gallery</h6>
+                <ul>
+                  <li>
+                    <Link href="project-details">
+                      <img
+                        src="/images/footer/gallery1.png"
+                        alt="Gallery"
+                      />
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="project-details">
+                      <img
+                        src="/images/footer/gallery2.png"
+                        alt="Gallery"
+                      />
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="project-details">
+                      <img
+                        src="/images/footer/gallery3.png"
+                        alt="Gallery"
+                      />
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="project-details">
+                      <img
+                        src="/images/footer/gallery4.png"
+                        alt="Gallery"
+                      />
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="project-details">
+                      <img
+                        src="/images/footer/gallery5.png"
+                        alt="Gallery"
+                      />
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="project-details">
+                      <img
+                        src="/images/footer/gallery6.png"
+                        alt="Gallery"
+                      />
+                      <i className="far fa-arrow-right" />
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom mt-30 py-15">
+            <div className="row align-items-center">
+              <div className="col-xl-4 col-lg-6">
+                <div
+                  className="copyright-text pt-10 text-lg-start text-center"
+                  data-aos="fade-left"
+                  data-aos-duration={1500}
+                  data-aos-offset={50}
+                >
+                  <p>
+                    Copyright @2024, <Link href="/">Akpager </Link> All Rights
+                    Reserved
+                  </p>
+                </div>
+              </div>
+              <div className="col-xl-8 col-lg-6">
+                <div
+                  className="footer-bottom-menu text-lg-end text-center"
+                  data-aos="fade-right"
+                  data-aos-duration={1500}
+                  data-aos-offset={50}
+                >
+                  <ul>
+                    <li>
+                      <Link href="faqs">Faqs</Link>
+                    </li>
+                    <li>
+                      <Link href="about">Setting</Link>
+                    </li>
+                    <li>
+                      <Link href="about">Privacy</Link>
+                    </li>
+                    <li>
+                      <Link href="contact">Contact</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {/* Scroll Top Button */}
+            <button className="scroll-top scroll-to-target" data-target="html">
+              <span className="far fa-angle-double-up" />
+            </button>
           </div>
         </div>
-
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
-          <p className="copyright">
-            © {currentYear} SkillDesk. All rights reserved.
-          </p>
-          <div className="footer-bottom-links">
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Service</Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  )
-}
-
-export default Footer
+      </footer>
+    );
+  };   

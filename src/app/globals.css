@@ -1,0 +1,196 @@
+/* Bootstrap CSS */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* Note: Template CSS files (style.css, flaticon, aos, etc.) are loaded from public/css in layout.tsx */
+
+/* Custom global styles - avoid conflicts with template */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Infinite Vertical Scrolling Animation */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.scroll-container {
+  overflow: hidden;
+  height: 500px; /* Fixed height for controlled scrolling */
+  max-height: 500px;
+  position: relative;
+}
+
+.scroll-images-up {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: scrollUp 20s linear infinite;
+}
+
+.scroll-images-down {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: scrollDown 25s linear infinite;
+}
+
+.scroll-images-up img,
+.scroll-images-down img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Duplicate images for seamless loop */
+.scroll-images-up::after,
+.scroll-images-down::after {
+  content: '';
+  display: block;
+}
+
+/* Equal height cards */
+.iconic-box.style-six {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.iconic-box.style-six .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.iconic-box.style-six .content h5 {
+  min-height: 40px; /* Ensures consistent title height */
+  display: flex;
+  align-items: center;
+}
+
+.iconic-box.style-six .content p {
+  flex: 1;
+}
+
+/* Testimonial Slider Dots - Centered */
+.testi-slider-four {
+  position: relative;
+  padding-bottom: 60px !important;
+}
+
+.testi-slider-four .slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+
+/* Header Navigation White Links */
+.header-white .navigation > li > a {
+  color: #fff !important;
+}
+
+.header-white .navigation > li > a:hover {
+  color: #ff914d !important;
+}
+
+.header-white .nav-search button {
+  color: #fff !important;
+}
+
+/* Fixed Header with Blue Background (Header 4 style) */
+.main-header.fixed-header {
+  background-color: #0148A9 !important;
+  box-shadow: 0 2px 20px rgba(1, 72, 169, 0.3);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.main-header.fixed-header .navigation > li > a {
+  color: #fff !important;
+}
+
+.main-header.fixed-header .light-btn {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.main-header.fixed-header .light-btn:hover {
+  background-color: #fff !important;
+  color: #0148A9 !important;
+}
+
+
+
+.main-header.fixed-header .theme-btn.style-two:hover {
+  background-color: #ff914d !important;
+  color: #fff !important;
+  border-color: #ff914d !important;
+}
+
+.main-header.fixed-header .nav-search button {
+  color: #fff !important;
+}
+
+/* Mobile Header Sticky Styling */
+.main-header.style-two.fixed-header {
+  background-color: #0148A9 !important;
+  box-shadow: 0 2px 20px rgba(1, 72, 169, 0.3);
+}
+
+.main-header.style-two.fixed-header .header-upper {
+  padding: 10px 0;
+}
+
+.main-header.style-two.fixed-header .header-inner {
+  padding: 5px 0 !important;
+}
+
+.main-header.style-two.fixed-header .light-btn {
+  color: #fff !important;
+  border-color: #fff !important;
+  background: transparent !important;
+}
+
+.main-header.style-two.fixed-header .light-btn:hover {
+  background-color: #fff !important;
+  color: #0148A9 !important;
+}
+
+/* Mobile menu sidebar also needs white text */
+.hidden-bar .sidebar-menu li a {
+  color: #333 !important;
+}
+
+.hidden-bar .sidebar-menu li a:hover {
+  color: #0148A9 !important;
+}

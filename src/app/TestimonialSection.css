@@ -1,0 +1,207 @@
+/* Testimonial Section Styles */
+
+.testimonials-area-four {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+@media only screen and (max-width: 991px) {
+  .testimonials-area-four {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.testimonials-area-four .section-title {
+  margin-bottom: 55px;
+}
+
+@media only screen and (max-width: 991px) {
+  .testimonials-area-four .section-title {
+    margin-bottom: 45px;
+  }
+}
+
+.testimonials-area-four .section-title.text-white .subtitle-two {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+}
+
+.testimonials-area-four .section-title.text-white .subtitle-two i {
+  margin-right: 10px;
+}
+
+.testimonials-area-four .section-title.text-white h2 {
+  color: white;
+  font-size: 48px;
+  line-height: 1.15;
+  font-weight: 600;
+  font-family: var(--heading-font);
+}
+
+@media only screen and (max-width: 991px) {
+  .testimonials-area-four .section-title.text-white h2 {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .testimonials-area-four .section-title.text-white h2 {
+    font-size: 30px;
+  }
+}
+
+.testi-slider-four {
+  position: relative;
+  padding-bottom: 60px !important;
+}
+
+.testi-slider-four .testimonial-item-three {
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 576px) {
+  .testi-slider-four .testimonial-item-three {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.testi-slider-four .slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+.testimonial-item-three {
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 576px) {
+  .testimonial-item-three {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.testimonial-item-three .image {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  max-width: 190px;
+  margin-right: 30px;
+}
+
+@media only screen and (max-width: 575px) {
+  .testimonial-item-three .image {
+    margin-bottom: 30px;
+  }
+}
+
+.testimonial-item-three .image img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.testimonial-item-three .ratting {
+  margin-bottom: 20px;
+}
+
+.testimonial-item-three .ratting i {
+  width: 26px;
+  height: 26px;
+  color: white;
+  font-size: 13px;
+  margin: 0 5px 0 0;
+  line-height: 26px;
+  text-align: center;
+  background: var(--primary-color);
+}
+
+.testimonial-item-three .author-text {
+  font-size: 20px;
+  line-height: 1.75;
+  margin-bottom: 20px;
+  letter-spacing: -0.6px;
+  font-family: var(--heading-font);
+}
+
+@media only screen and (max-width: 375px) {
+  .testimonial-item-three .author-text {
+    font-size: 18px;
+  }
+}
+
+.testimonial-item-three .name-designation {
+  position: relative;
+  padding-left: 65px;
+}
+
+.testimonial-item-three .name-designation h6 {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 376px) {
+  .testimonial-item-three .name-designation h6 {
+    font-size: 18px;
+  }
+}
+
+.testimonial-item-three .name-designation span {
+  opacity: 0.55;
+  font-size: 14px;
+}
+
+.testimonial-item-three .name-designation:before {
+  content: "";
+  line-height: 1;
+  font-size: 65px;
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: flaticon_akpager !important;
+  background-image: -webkit-linear-gradient(356deg, #B065E7 13.66%, #3157EF 81.89%);
+  background-image: -o-linear-gradient(356deg, #B065E7 13.66%, #3157EF 81.89%);
+  background-image: linear-gradient(94deg, #B065E7 13.66%, #3157EF 81.89%);
+}
+
+/* Background Styles */
+.bg-black {
+  background-color: black;
+}
+
+/* Utility Classes */
+.py-120 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+@media only screen and (max-width: 991px) {
+  .rpy-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}

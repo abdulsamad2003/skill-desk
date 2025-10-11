@@ -1,0 +1,137 @@
+/* Blog Section Styles */
+.blog-area-four {
+  padding-bottom: 90px;
+}
+
+@media (max-width: 767px) {
+  .blog-area-four {
+    padding-bottom: 70px;
+  }
+}
+
+.section-title.text-center {
+  text-align: center;
+}
+
+.section-title.mb-55 {
+  margin-bottom: 55px;
+}
+
+.blog-item.style-two {
+  margin-bottom: 30px;
+}
+
+.blog-item.style-two .image {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.blog-item.style-two .image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.blog-item.style-two .date {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+.blog-item.style-two .date b {
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+  line-height: 1;
+}
+
+.blog-item.style-two .date span {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  line-height: 1;
+}
+
+.blog-item.style-two .content .category {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.blog-item.style-two .content h5 {
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.blog-item.style-two .content h5 a {
+  color: var(--heading-color);
+  transition: all 0.3s ease;
+}
+
+.blog-item.style-two .content h5 a:hover {
+  color: var(--primary-color);
+}
+
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-meta li {
+  font-size: 14px;
+  color: var(--base-color);
+  margin-right: 20px;
+}
+
+.blog-meta li a {
+  color: var(--base-color);
+  transition: all 0.3s ease;
+}
+
+.blog-meta li a:hover {
+  color: var(--primary-color);
+}
+
+.blog-meta li i {
+  margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .blog-item.style-two {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .blog-item.style-two .date {
+    width: 50px;
+    height: 50px;
+    padding-top: 8px;
+  }
+  
+  .blog-item.style-two .date b {
+    font-size: 18px;
+  }
+  
+  .blog-item.style-two .date span {
+    font-size: 12px;
+  }
+  
+  .blog-meta li {
+    margin-right: 15px;
+    font-size: 13px;
+  }
+}

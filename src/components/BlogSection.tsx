@@ -13,7 +13,7 @@ const BlogSection = () => {
       category: "e-Learning",
       title: "Meet Success the Cale Smashing Book By Addy Osmania",
       author: "Roger J. Spaulding",
-      comments: "Comments(5)"
+      comments: "Comments(5)",
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const BlogSection = () => {
       category: "e-Learning",
       title: "Practical Design Tips Guidelines For Beginner Designers",
       author: "Roger J. Spaulding",
-      comments: "Comments(5)"
+      comments: "Comments(5)",
     },
     {
       id: 3,
@@ -33,8 +33,8 @@ const BlogSection = () => {
       category: "e-Learning",
       title: "Meet Success the Cale Smashing Book By Addy Osmania",
       author: "Roger J. Spaulding",
-      comments: "Comments(5)"
-    }
+      comments: "Comments(5)",
+    },
   ];
 
   return (
@@ -74,9 +74,7 @@ const BlogSection = () => {
                     {post.category}
                   </a>
                   <h5>
-                    <Link href="blog-details">
-                      {post.title}
-                    </Link>
+                    <Link href="blog-details">{post.title}</Link>
                   </h5>
                   <ul className="blog-meta">
                     <li>

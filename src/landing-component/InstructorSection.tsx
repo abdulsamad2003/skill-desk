@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import "../app/InstructorSection.css";
+import "@/landing-component/InstructorSection.css";
 
 const InstructorSection = () => {
   return (

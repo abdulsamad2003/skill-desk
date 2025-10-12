@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Slider from "react-slick";
 import { sliderProps } from "@/utility/sliderProps";
-import "./../app/FeatureSection.css";
+import "@/landing-component/FeatureSection.css";
 
 const FeatureSection = () => {
   return (

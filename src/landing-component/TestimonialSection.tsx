@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { sliderProps } from "@/utility/sliderProps";
-import "../app/TestimonialSection.css";
+import "@/landing-component/TestimonialSection.css";
 
 const TestimonialSection = () => {
   return (

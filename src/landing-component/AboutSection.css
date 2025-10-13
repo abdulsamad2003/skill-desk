@@ -236,6 +236,12 @@ img {
   max-height: 500px;
   position: relative;
 }
+@media only screen and (max-width: 575px) {
+  .scroll-container {
+    height: 300px;
+    max-height: 300px;
+  }
+}
 
 .scroll-images-up {
   display: flex;

@@ -68,13 +68,14 @@ const ResponsiveHeader = ({ onePage }: { onePage?: boolean }) => {
               <div className="logo-outer">
                 <div className="logo">
                   <Link href="/">
-                    <img
+                    {/* <img
                       src="/images/logos/logo4.png"
                       alt="Logo"
                       title="Logo"
-                    />
+                    /> */}
+                    <h3 className="text-white text-uppercase fs-24 fw-bold">Skill Desk</h3>
                   </Link>
-                </div>
+                </div>  
               </div>
               <div className="nav-outer ms-lg-auto clearfix">
                 <nav className="main-menu navbar-expand-lg">

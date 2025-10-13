@@ -1,5 +1,6 @@
 "use client";
 import Isotope from "isotope-layout";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const CoursesIsotope = () => {
@@ -114,16 +115,16 @@ const CoursesIsotope = () => {
                 >
                   <div className="image">
                     <img src="/images/courses/course1.jpg" alt="Course" />
-                    <a href="#" className="details-btn">
+                    <Link href="/course-details" className="details-btn">
                       <i className="far fa-arrow-right" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="content">
-                    <a className="category" href="#">
+                    <Link className="category" href="/course-details">
                       Web Design
-                    </a>
+                    </Link>
                     <h6>
-                      <a href="#">Basic to Advance UI/UX Design (Web+Mobile)</a>
+                      <Link href="/course-details">Basic to Advance UI/UX Design (Web+Mobile)</Link>
                     </h6>
                     <div className="author">
                       <img
@@ -154,16 +155,16 @@ const CoursesIsotope = () => {
                 >
                   <div className="image">
                     <img src="/images/courses/course2.jpg" alt="Course" />
-                    <a href="#" className="details-btn">
+                    <Link href="/course-details" className="details-btn">
                       <i className="far fa-arrow-right" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="content">
-                    <a className="category" href="#">
+                    <Link className="category" href="/course-details">
                       iOS Mobile App
-                    </a>
+                    </Link>
                     <h6>
-                      <a href="#">Basic to Advance Mobile Apps Development</a>
+                      <Link href="/course-details">Basic to Advance Mobile Apps Development</Link>
                     </h6>
                     <div className="author">
                       <img
@@ -194,16 +195,16 @@ const CoursesIsotope = () => {
                 >
                   <div className="image">
                     <img src="/images/courses/course3.jpg" alt="Course" />
-                    <a href="#" className="details-btn">
+                    <Link href="/course-details" className="details-btn">
                       <i className="far fa-arrow-right" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="content">
-                    <a className="category" href="#">
+                    <Link className="category" href="/course-details">
                       Digital Marketing
-                    </a>
+                    </Link>
                     <h6>
-                      <a href="#">Grow Your Digital Marketing With Lamber</a>
+                      <Link href="/course-details">Grow Your Digital Marketing With Lamber</Link>
                     </h6>
                     <div className="author">
                       <img
@@ -233,16 +234,16 @@ const CoursesIsotope = () => {
                 >
                   <div className="image">
                     <img src="/images/courses/course4.jpg" alt="Course" />
-                    <a href="#" className="details-btn">
+                    <Link href="/course-details" className="details-btn">
                       <i className="far fa-arrow-right" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="content">
-                    <a className="category" href="#">
+                    <Link className="category" href="/course-details">
                       Business
-                    </a>
+                    </Link>
                     <h6>
-                      <a href="#">How To Grow your Business Development</a>
+                      <Link href="/course-details">How To Grow your Business Development</Link>
                     </h6>
                     <div className="author">
                       <img
@@ -273,16 +274,16 @@ const CoursesIsotope = () => {
                 >
                   <div className="image">
                     <img src="/images/courses/course5.jpg" alt="Course" />
-                    <a href="#" className="details-btn">
+                    <Link href="/course-details" className="details-btn">
                       <i className="far fa-arrow-right" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="content">
-                    <a className="category" href="#">
+                    <Link className="category" href="/course-details">
                       Medical Care
-                    </a>
+                    </Link>
                     <h6>
-                      <a href="#">Basic Medical Caring from your Home</a>
+                      <Link href="/course-details">Basic Medical Caring from your Home</Link>
                     </h6>
                     <div className="author">
                       <img
@@ -313,16 +314,16 @@ const CoursesIsotope = () => {
                 >
                   <div className="image">
                     <img src="/images/courses/course6.jpg" alt="Course" />
-                    <a href="#" className="details-btn">
+                    <Link href="/course-details" className="details-btn">
                       <i className="far fa-arrow-right" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="content">
-                    <a className="category" href="#">
+                    <Link className="category" href="/course-details">
                       Mobile Apps
-                    </a>
+                    </Link>
                     <h6>
-                      <a href="#">Basic to Advance UI/UX Design (Web+Mobile)</a>
+                      <Link href="/course-details">Basic to Advance UI/UX Design (Web+Mobile)</Link>
                     </h6>
                     <div className="author">
                       <img

@@ -9,7 +9,7 @@ interface AkpagerAccordionProps {
 
 const AkpagerAccordion = ({ event, active, onClick, title }: AkpagerAccordionProps) => {
   return (
-    <div className="accordion-item">
+    <Accordion.Item eventKey={event} className="accordion-item">
       <h5 className="accordion-header">
         <Accordion.Button
           className={`accordion-button ${active === event ? "" : "collapsed"}`}
@@ -28,7 +28,7 @@ const AkpagerAccordion = ({ event, active, onClick, title }: AkpagerAccordionPro
           </p>
         </div>
       </Accordion.Collapse>
-    </div>
+    </Accordion.Item>
   );
 };
 export default AkpagerAccordion;

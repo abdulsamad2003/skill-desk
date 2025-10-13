@@ -184,7 +184,7 @@ const FeatureSection = () => {
       {/* Special Features Area End */}
 
       {/* Marquee Iconic Box Area Start */}
-      <section className="marquee-iconic-box-area pt-60 rpt-40 pb-50">
+      <section className="marquee-iconic-box-area bg-white pt-60 rpt-40 pb-50">
         <Slider
           {...sliderProps.marqueeSliderLeft}
           className="marquee-slider-right iconic-slider-right"

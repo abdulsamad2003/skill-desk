@@ -86,9 +86,7 @@ const ResponsiveHeader = ({ onePage }: { onePage?: boolean }) => {
                   />
                 </nav>
               </div>
-              <div className="nav-search ms-xl-2 ms-4 me-lg-auto py-10">
-                <NavSearch />
-              </div>
+
               <div className="menu-btns ms-lg-auto">
                 <Link href="/contact" className="light-btn">
                   Log In
@@ -172,22 +170,14 @@ const DesktopNav = ({
         </ul>
       ) : (
         <ul className="navigation clearfix">
-          <li className="dropdown">
-            <a href="#">Home</a>
-            <ul>
-              <li>
-                <Link href="/">Business</Link>
-              </li>
-              <li>
-                <Link href="index4">E-learning</Link>
-              </li>
-            </ul>
+          <li>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/blog">Blog</Link>
           </li>
           <li>
-            <Link href="/services">Services</Link>
+            <Link href="/course-details">Courses</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>
@@ -1067,16 +1057,10 @@ const NavSearch = () => {
 };
 
 const MobileMenu = ({ sidebar, onePage, menus }: { sidebar?: boolean; onePage?: boolean; menus?: any[] }) => {
-  const [activeMenu, setActiveMenu] = useState("");
-  const [multiMenu, setMultiMenu] = useState("");
-  const activeMenuSet = (value: string) =>
-      setActiveMenu(activeMenu === value ? "" : value),
-    activeLi = (value: string) =>
-      value === activeMenu ? { display: "block" } : { display: "none" };
-  const multiMenuSet = (value: string) =>
-      setMultiMenu(multiMenu === value ? "" : value),
-    multiMenuActiveLi = (value: string) =>
-      value === multiMenu ? { display: "block" } : { display: "none" };
+  const onClick = () => {
+    document.querySelector("body")?.classList.toggle("side-content-visible");
+  };
+  
   return (
     <Fragment>
       {onePage ? (
@@ -1087,207 +1071,23 @@ const MobileMenu = ({ sidebar, onePage, menus }: { sidebar?: boolean; onePage?: 
         >
           {menus?.map((menu) => (
             <li key={menu.id}>
-              <a href={`#${menu.href}`}>{menu.title}</a>
+              <a href={`#${menu.href}`} onClick={onClick}>{menu.title}</a>
             </li>
           ))}
         </ul>
       ) : (
         <ul className={`${sidebar ? "sidebar-menu" : "navigation"} clearfix`}>
-          <li className="dropdown">
-            <a href="#">Home</a>
-            <ul style={activeLi("home") as React.CSSProperties}>
-              <li className="dropdown">
-                <a href="#">MultiPage</a>
-                <ul style={multiMenuActiveLi("multiPage") as React.CSSProperties}>
-                  <li>
-                    <Link href="/">Business</Link>
-                  </li>
-                  <li>
-                    <Link href="index2">Lead Capture</Link>
-                  </li>
-                  <li>
-                    <Link href="index3">Software Landing</Link>
-                  </li>
-                  <li>
-                    <Link href="index4">E-learning</Link>
-                  </li>
-                  <li>
-                    <Link href="index5">Saas Landing</Link>
-                  </li>
-                  <li>
-                    <Link href="index6">AI Software</Link>
-                  </li>
-                  <li>
-                    <Link href="index7">Website Builder</Link>
-                  </li>
-                  <li>
-                    <Link href="index8">Fintech</Link>
-                  </li>
-                  <li>
-                    <Link href="index9">Chatbot</Link>
-                  </li>
-                </ul>
-                <div
-                  className="dropdown-btn"
-                  onClick={() => multiMenuSet("multiPage")}
-                >
-                  <span className="far fa-angle-down" />
-                </div>
-              </li>
-              <li className="dropdown">
-                <a href="#">OnePage</a>
-                <ul style={multiMenuActiveLi("OnePage") as React.CSSProperties}>
-                  <li>
-                    <Link href="index1-onepage">Business</Link>
-                  </li>
-                  <li>
-                    <Link href="index2-onepage">Lead Capture</Link>
-                  </li>
-                  <li>
-                    <Link href="index3-onepage">Software Landing</Link>
-                  </li>
-                  <li>
-                    <Link href="index4-onepage">E-learning</Link>
-                  </li>
-                  <li>
-                    <Link href="index5-onepage">Saas Landing</Link>
-                  </li>
-                  <li>
-                    <Link href="index6-onepage">AI Software</Link>
-                  </li>
-                  <li>
-                    <Link href="index7-onepage">Website Builder</Link>
-                  </li>
-                  <li>
-                    <Link href="index8-onepage">Fintech</Link>
-                  </li>
-                  <li>
-                    <Link href="index9-onepage">Chatbot</Link>
-                  </li>
-                </ul>
-                <div
-                  className="dropdown-btn"
-                  onClick={() => multiMenuSet("OnePage")}
-                >
-                  <span className="far fa-angle-down" />
-                </div>
-              </li>
-            </ul>
-            <div className="dropdown-btn" onClick={() => activeMenuSet("home")}>
-              <span className="far fa-angle-down" />
-            </div>
+          <li>
+            <Link href="/" onClick={onClick}>Home</Link>
           </li>
-          <li className="dropdown">
-            <a href="#">pages</a>
-            <ul style={activeLi("pages") as React.CSSProperties}>
-              <li>
-                <Link href="about">About Us</Link>
-              </li>
-              <li>
-                <Link href="faqs">faqs</Link>
-              </li>
-              <li>
-                <Link href="team">Team Members</Link>
-              </li>
-              <li>
-                <Link href="pricing">Pricing Plan</Link>
-              </li>
-              <li>
-                <Link href="contact">Contact us</Link>
-              </li>
-              <li>
-                <Link href="sign-in">Sign In</Link>
-              </li>
-              <li>
-                <Link href="sign-up">Sign Up</Link>
-              </li>
-              <li>
-                <Link href="coming-soon">Coming Soon</Link>
-              </li>
-              <li>
-                <Link href="404">404 error</Link>
-              </li>
-            </ul>
-            <div
-              className="dropdown-btn"
-              onClick={() => activeMenuSet("pages")}
-            >
-              <span className="far fa-angle-down" />
-            </div>
+          <li>
+            <Link href="/blog" onClick={onClick}>Blog</Link>
           </li>
-          <li className="dropdown">
-            <a href="#">Services</a>
-            <ul style={activeLi("Services") as React.CSSProperties}>
-              <li>
-                <Link href="services">Our Services</Link>
-              </li>
-              <li>
-                <Link href="service-details">Service Details</Link>
-              </li>
-            </ul>
-            <div
-              className="dropdown-btn"
-              onClick={() => activeMenuSet("Services")}
-            >
-              <span className="far fa-angle-down" />
-            </div>
+          <li>
+            <Link href="/course-details" onClick={onClick}>Courses</Link>
           </li>
-          <li className="dropdown">
-            <a href="#">Shop</a>
-            <ul style={activeLi("Shop") as React.CSSProperties}>
-              <li>
-                <Link href="shop">our Products</Link>
-              </li>
-              <li>
-                <Link href="product-details">Product Details</Link>
-              </li>
-              <li>
-                <Link href="cart">Shopping Cart</Link>
-              </li>
-              <li>
-                <Link href="checkout">Checkout</Link>
-              </li>
-            </ul>
-            <div className="dropdown-btn" onClick={() => activeMenuSet("Shop")}>
-              <span className="far fa-angle-down" />
-            </div>
-          </li>
-          <li className="dropdown">
-            <a href="#">Projects</a>
-            <ul style={activeLi("Projects") as React.CSSProperties}>
-              <li>
-                <Link href="projects">Project Grid</Link>
-              </li>
-              <li>
-                <Link href="project-list">Project List</Link>
-              </li>
-              <li>
-                <Link href="project-masonry">Project Masonry</Link>
-              </li>
-              <li>
-                <Link href="project-details">Project Details</Link>
-              </li>
-            </ul>
-            <div
-              className="dropdown-btn"
-              onClick={() => activeMenuSet("Projects")}
-            >
-              <span className="far fa-angle-down" />
-            </div>
-          </li>
-          <li className="dropdown">
-            <a href="#">blog</a>
-            <ul style={activeLi("blog") as React.CSSProperties}>
-              <li>
-                <Link href="blog">blog standard</Link>
-              </li>
-              <li>
-                <Link href="blog-details">blog details</Link>
-              </li>
-            </ul>
-            <div className="dropdown-btn" onClick={() => activeMenuSet("blog")}>
-              <span className="far fa-angle-down" />
-            </div>
+          <li>
+            <Link href="/contact" onClick={onClick}>Contact</Link>
           </li>
         </ul>
       )}

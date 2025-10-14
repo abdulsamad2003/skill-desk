@@ -60,10 +60,10 @@ const AboutSection = () => {
                   device.
                 </p>
                 <div className="about-four-btns mt-30">
-                  <Link href="#contact" className="theme-btn style-two">
+                  <Link href="/contact" className="theme-btn style-two">
                     Contact Us <i className="far fa-arrow-right" />
                   </Link>
-                  <Link href="#courses" className="theme-btn">
+                  <Link href="#course" className="theme-btn">
                     Our Courses <i className="far fa-arrow-right" />
                   </Link>
                 </div>

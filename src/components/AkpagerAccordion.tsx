@@ -5,12 +5,13 @@ interface AkpagerAccordionProps {
   active: string;
   onClick: () => void;
   title: string;
+  content?: string;
 }
 
-const AkpagerAccordion = ({ event, active, onClick, title }: AkpagerAccordionProps) => {
+const AkpagerAccordion = ({ event, active, onClick, title, content }: AkpagerAccordionProps) => {
   return (
     <Accordion.Item eventKey={event} className="accordion-item">
-      <h5 className="accordion-header">
+      <h4 className="accordion-header">
         <Accordion.Button
           className={`accordion-button ${active === event ? "" : "collapsed"}`}
           aria-expanded={active === event ? "true" : "false"}
@@ -18,13 +19,11 @@ const AkpagerAccordion = ({ event, active, onClick, title }: AkpagerAccordionPro
         >
           {title}
         </Accordion.Button>
-      </h5>
+      </h4>
       <Accordion.Collapse eventKey={event} className="accordion-collapse">
         <div className="accordion-body">
           <p>
-            At vero eoset accusamus etiusto dignissimos duci blanditiis
-            praesentium corrupti dolores molest excepturi sint occaecati
-            cupiditate
+            {content || "At vero eoset accusamus etiusto dignissimos duci blanditiis praesentium corrupti dolores molest excepturi sint occaecati cupiditate"}
           </p>
         </div>
       </Accordion.Collapse>

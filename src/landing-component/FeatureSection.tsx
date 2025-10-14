@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Slider from "react-slick";
 import { sliderProps } from "@/utility/sliderProps";
 import "@/landing-component/FeatureSection.css";
@@ -8,7 +7,7 @@ const FeatureSection = () => {
   return (
     <>
       {/* Special Features Area Start */}
-      <section id="services" className="special-features-area pt-100 rpt-80">
+      <section id="features" className="special-features-area pt-100 rpt-80">
         <div className="container">
           <div className="row justify-content-center g-4">
             <div className="col-xl-9 col-lg-10">
@@ -40,9 +39,7 @@ const FeatureSection = () => {
                   <i className="flaticon-open-book" />
                 </div>
                 <div className="content">
-                  <h5>
-                    <Link href="service-details">AI Course Builder</Link>
-                  </h5>
+                  <h5>AI Course Builder</h5>
                   <p>
                     Generate complete courses, modules, and quizzes from a
                     single prompt.
@@ -62,11 +59,7 @@ const FeatureSection = () => {
                   <i className="flaticon-help" />
                 </div>
                 <div className="content">
-                  <h5>
-                    <Link href="service-details">
-                      Competency & Skill Management
-                    </Link>
-                  </h5>
+                  <h5>Competency & Skill Management</h5>
                   <p>
                     Track, analyze, and develop skills using AI-driven
                     assessments, gap analysis, and adaptive paths.
@@ -86,9 +79,7 @@ const FeatureSection = () => {
                   <i className="flaticon-new-job" />
                 </div>
                 <div className="content">
-                  <h5>
-                    <Link href="service-details">Competency Profiling</Link>
-                  </h5>
+                  <h5>Competency Profiling</h5>
                   <p>Map and manage competencies aligned to L&D outcomes.</p>
                 </div>
               </div>
@@ -105,11 +96,7 @@ const FeatureSection = () => {
                   <i className="flaticon-self-development" />
                 </div>
                 <div className="content">
-                  <h5>
-                    <Link href="service-details">
-                      Frictionless Knowledge Transfer
-                    </Link>
-                  </h5>
+                  <h5>Frictionless Knowledge Transfer</h5>
                   <p>Guide learners without the need for available experts.</p>
                 </div>
               </div>
@@ -126,9 +113,7 @@ const FeatureSection = () => {
                   <i className="flaticon-analytics" />
                 </div>
                 <div className="content">
-                  <h5>
-                    <Link href="service-details">Skill Demand Forecasting</Link>
-                  </h5>
+                  <h5>Skill Demand Forecasting</h5>
                   <p>
                     Analyze industry trends to predict emerging skill needs.
                   </p>
@@ -146,11 +131,7 @@ const FeatureSection = () => {
                   <i className="flaticon-goal-1" />
                 </div>
                 <div className="content">
-                  <h5>
-                    <Link href="service-details">
-                      Performance Improvement Recommendations
-                    </Link>
-                  </h5>
+                  <h5>Performance Improvement Recommendations</h5>
                   <p>
                     AI/ML insights to enhance productivity and learning impact.
                   </p>
@@ -169,9 +150,7 @@ const FeatureSection = () => {
                   <i className="flaticon-help" />
                 </div>
                 <div className="content">
-                  <h5>
-                    <Link href="service-details">Continuous Monitoring</Link>
-                  </h5>
+                  <h5>Continuous Monitoring</h5>
                   <p>
                     Track progress and engagement across learners and teams.
                   </p>

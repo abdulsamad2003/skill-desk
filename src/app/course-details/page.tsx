@@ -9,7 +9,7 @@ const page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <PageLayout>
+    <PageLayout header={4} footer={4} bodyClass="course-details-page">
       <PageBanner
         pageName={"Course Details"}
         pageTitle={"Basic to Advance UI/UX Design Course"}
@@ -147,50 +147,6 @@ const page = () => {
                     Enroll Now <i className="far fa-arrow-right" />
                   </button>
                 </div>
-                <div className="project-share mt-30">
-                  <h4>Share Course</h4>
-                  <div className="social-style-one">
-                    <a href="#">
-                      <i className="fab fa-twitter" />
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-facebook-f" />
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-instagram" />
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-pinterest-p" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div
-                className="image mb-30"
-                data-aos="fade-up"
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <img
-                  src="/images/courses/course1.jpg"
-                  alt="Course Preview"
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div
-                className="image mb-30"
-                data-aos="fade-up"
-                data-aos-delay={100}
-                data-aos-duration={1500}
-                data-aos-offset={50}
-              >
-                <img
-                  src="/images/courses/course2.jpg"
-                  alt="Course Preview"
-                />
               </div>
             </div>
             <div className="col-lg-12">

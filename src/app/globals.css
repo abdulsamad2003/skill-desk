@@ -4,6 +4,10 @@
 /* Note: Template CSS files (style.css, flaticon, aos, etc.) are loaded from public/css in layout.tsx */
 
 /* Custom global styles - avoid conflicts with template */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
 }

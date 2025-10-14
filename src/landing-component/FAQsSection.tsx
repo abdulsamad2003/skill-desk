@@ -12,24 +12,28 @@ const FAQsSection = () => {
   const accordionItems = [
     {
       id: 1,
-      title: "What is Skill Desk and how does it work?",
+      title: "What is SkillDesk.AI and what does it do?",
+      content: "SkillDesk.AI helps organizations and individuals develop critical skills through features like AI-generated course creation, personalized learning paths, skill-gap analysis, automated assessments, and advanced reporting. The platform supports onboarding, upskilling, career recommendations, and transition management, ensuring teams are ready for evolving industry demands."
     },
     {
       id: 2,
-      title: "How do I enroll in courses?",
+      title: "How is SkillDesk.AI different from other LMS platforms?",
+      content: "SkillDesk.AI utilizes AI for instant course creation via chat, interactive video learning, AI-driven skill forecasting, and automated career path recommendations—features missing in traditional LMS platforms. It centralizes both internal and external resources, offers adaptive learning based on competency data, and provides deep analytics for impact measurement. Unlike legacy LMS platforms focused mainly on course delivery and compliance, SkillDesk.AI delivers truly personalized, performance-driven learning that adapts to unique organizational needs."
     },
     {
       id: 3,
-      title: "Can I access courses on mobile devices?",
+      title: "Who can use SkillDesk.AI? (Corporates, educators, trainers, etc.)",
+      content: "Corporates and enterprises seeking scalable, secure workforce development, Educators and trainers building custom programs for schools, colleges, or coaching centers, Professional training organizations, SMEs, and startups looking for smart, automated skill management."
     },
     {
       id: 4,
-      title: "Do you offer certificates upon course completion?",
+      title: "Is SkillDesk.AI suitable for small businesses and startups?",
+      content: "SkillDesk.AI is designed for both large enterprises and smaller organizations, supporting rapid, hassle-free onboarding, mobile access, affordable usage tiers, and minimal IT requirements. Its AI automation reduces manual effort, making it ideal for resource-limited teams."
     },
   ];
 
   return (
-    <section className="faqs-statistics-area pt-120 rpt-100 pb-100 rpb-80">
+    <section id="faqs" className="faqs-statistics-area pt-120 rpt-100 pb-100 rpb-80">
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
@@ -54,6 +58,7 @@ const FAQsSection = () => {
                 <AkpagerAccordion
                   key={item.id}
                   title={item.title}
+                  content={item.content}
                   event={`collapse${item.id}`}
                   onClick={() =>
                     setActive(
@@ -97,9 +102,9 @@ const FAQsSection = () => {
                   <span
                     className="count-text plus"
                     data-speed={3000}
-                    data-stop={450}
+                    data-stop={120}
                   >
-                    <Counter end={450} />
+                    <Counter end={120} />
                   </span>
                   <span className="counter-title">
                     Skill Development Courses
@@ -114,12 +119,12 @@ const FAQsSection = () => {
                   <span
                     className="count-text plus"
                     data-speed={3000}
-                    data-stop={135}
+                    data-stop={60}
                   >
-                    <Counter end={153} />
+                    <Counter end={60} />
                   </span>
                   <span className="counter-title">
-                    Professional &amp; Expert Mentors
+                    Professional &amp; Expert Instructors
                   </span>
                 </div>
               </div>
@@ -131,12 +136,12 @@ const FAQsSection = () => {
                   <span
                     className="count-text plus"
                     data-speed={3000}
-                    data-stop={150}
+                    data-stop={60}
                   >
-                    <Counter end={150} />
+                    <Counter end={60} />
                   </span>
                   <span className="counter-title">
-                    Regular Enroll Students
+                  Academies created
                   </span>
                 </div>
               </div>

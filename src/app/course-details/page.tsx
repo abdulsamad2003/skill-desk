@@ -5,7 +5,7 @@ import EnrollmentModal from "@/components/EnrollmentModal";
 import Link from "next/link";
 import { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -42,7 +42,7 @@ const page = () => {
                     </p>
                   </div>
                 </div>
-                <h3>What You'll Learn</h3>
+                <h3>What You&apos;ll Learn</h3>
                 <ul className="icon-list mt-20 mb-35">
                   <li>
                     <i className="fal fa-check" /> Master fundamental design
@@ -202,7 +202,7 @@ const page = () => {
                   This course combines theoretical knowledge with practical
                   hands-on projects, ensuring you gain real-world skills that
                   employers value. With lifetime access to course materials and
-                  a supportive community of fellow learners, you'll have
+                  a supportive community of fellow learners, you&apos;ll have
                   everything you need to succeed in the competitive field of
                   UI/UX design.
                 </p>
@@ -367,5 +367,5 @@ const page = () => {
     </PageLayout>
   );
 };
-export default page;
+export default Page;
 

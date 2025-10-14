@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { createElement } from "react";
+import { createElement, ReactNode } from "react";
 
 interface PageBannerProps {
   pageTitle?: string;
@@ -7,7 +7,13 @@ interface PageBannerProps {
   titleTag?: string;
 }
 
-const Tag = ({ tagName, children, ...props }: any) =>
+interface TagProps {
+  tagName: string;
+  children: ReactNode;
+  [key: string]: unknown;
+}
+
+const Tag = ({ tagName, children, ...props }: TagProps) =>
   createElement(tagName, props, children);
 
 const PageBanner = ({ pageTitle, pageName, titleTag = "h1" }: PageBannerProps) => {

@@ -2,7 +2,6 @@
 import useClickOutside from "@/utility/useClickOutside";
 import Link from "next/link";
 import { Fragment, useState } from "react";
-import { Accordion } from "react-bootstrap";
 
 interface HeaderProps {
   header?: number;
@@ -81,7 +80,6 @@ const ResponsiveHeader = ({ onePage }: { onePage?: boolean }) => {
                 <nav className="main-menu navbar-expand-lg">
                   <DesktopNav
                     onePage={onePage}
-                    logo="/images/logos/logo4.png"
                     menus={menus}
                   />
                 </nav>
@@ -148,15 +146,19 @@ const ResponsiveHeader = ({ onePage }: { onePage?: boolean }) => {
   );
 };
 
+interface MenuItem {
+  id: number;
+  href: string;
+  title: string;
+}
+
 // Desktop Navigation Component
 const DesktopNav = ({ 
-  logo = "/images/logos/logo4.png", 
   onePage, 
   menus 
 }: { 
-  logo?: string; 
   onePage?: boolean; 
-  menus?: any[] 
+  menus?: MenuItem[] 
 }) => {
   return (
     <div className="navbar-collapse clearfix">
@@ -216,7 +218,6 @@ const DefaultHeader = ({ onePage }: { onePage?: boolean }) => {
             <div className="nav-outer ms-lg-auto clearfix">
               <nav className="main-menu navbar-expand-lg">
                 <Nav
-                  logo="/images/logos/logo.png"
                   menus={menus}
                   onePage={onePage}
                 />
@@ -314,7 +315,6 @@ const Header3 = ({ onePage }: { onePage?: boolean }) => {
               <nav className="main-menu navbar-expand-lg">
                 <Nav
                   onePage={onePage}
-                  logo="/images/logos/logo3.png"
                   menus={menus}
                 />
               </nav>
@@ -406,7 +406,6 @@ const Header5 = ({ onePage }: { onePage?: boolean }) => {
               <nav className="main-menu navbar-expand-lg">
                 <Nav
                   onePage={onePage}
-                  logo="/images/logos/logo5.png"
                   menus={menus}
                 />
               </nav>
@@ -527,13 +526,12 @@ const Header6 = ({ onePage }: { onePage?: boolean }) => {
                   </Link>
                 </div>
               </div>
-              <div className="nav-outer ms-lg-auto clearfix">
-                <nav className="main-menu navbar-expand-lg">
-                  <Nav
-                    onePage={onePage}
-                    logo="/images/logos/logo6.png"
-                    menus={menus}
-                  />
+            <div className="nav-outer ms-lg-auto clearfix">
+              <nav className="main-menu navbar-expand-lg">
+                <Nav
+                  onePage={onePage}
+                  menus={menus}
+                />
                 </nav>
               </div>
               <div className="nav-search ms-xl-2 ms-4 me-xl-auto py-10">
@@ -641,7 +639,6 @@ const Header7 = ({ onePage }: { onePage?: boolean }) => {
               <nav className="main-menu navbar-expand-lg">
                 <Nav
                   onePage={onePage}
-                  logo="/images/logos/logo5.png"
                   menus={menus}
                 />
               </nav>
@@ -699,7 +696,6 @@ const Header8 = ({ onePage }: { onePage?: boolean }) => {
               <nav className="main-menu navbar-expand-lg">
                 <Nav
                   onePage={onePage}
-                  logo="/images/logos/logo8.png"
                   menus={menus}
                 />
               </nav>
@@ -751,8 +747,6 @@ const Header9 = ({ onePage }: { onePage?: boolean }) => {
               <nav className="main-menu navbar-expand-lg">
                 <Nav
                   onePage={onePage}
-                  logo="/images/logos/logo6.png"
-                  dark={true}
                   menus={menus}
                 />
               </nav>
@@ -794,7 +788,7 @@ const HeaderNotFound = ({ onePage }: { onePage?: boolean }) => {
             </div>
             <div className="nav-outer ms-lg-auto clearfix">
               <nav className="main-menu navbar-expand-lg">
-                <Nav onePage={onePage} logo="/images/logos/logo6.png" />
+                <Nav onePage={onePage} />
               </nav>
             </div>
             <div className="nav-search ms-xl-2 ms-4 py-10">
@@ -813,15 +807,11 @@ const HeaderNotFound = ({ onePage }: { onePage?: boolean }) => {
 };
 
 const Nav = ({
-  logo = "/images/logos/logo2.png",
-  dark,
   onePage,
   menus,
 }: {
-  logo?: string;
-  dark?: boolean;
   onePage?: boolean;
-  menus?: any[];
+  menus?: MenuItem[];
 }) => {
   return (
     <Fragment>
@@ -1029,7 +1019,7 @@ const Nav = ({
 
 const NavSearch = () => {
   const [toggle, setToggle] = useState(false);
-  let domNode = useClickOutside(() => {
+  const domNode = useClickOutside(() => {
     setToggle(false);
   });
   return (
@@ -1056,7 +1046,7 @@ const NavSearch = () => {
   );
 };
 
-const MobileMenu = ({ sidebar, onePage, menus }: { sidebar?: boolean; onePage?: boolean; menus?: any[] }) => {
+const MobileMenu = ({ sidebar, onePage, menus }: { sidebar?: boolean; onePage?: boolean; menus?: MenuItem[] }) => {
   const onClick = () => {
     document.querySelector("body")?.classList.toggle("side-content-visible");
   };

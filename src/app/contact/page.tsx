@@ -22,7 +22,7 @@ const ContactPage = () => {
                 >
                   <h2>Feel Free to Contact Us, Get In Touch</h2>
                   <p>
-                    We're here to assist you in any way we can. Whether you have
+                    We&apos;re here to assist you in any way we can. Whether you have
                     questions, feedback, or just want to say hello
                   </p>
                 </div>

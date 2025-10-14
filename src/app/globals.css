@@ -321,14 +321,14 @@ h1, h2, h3, h4, h5, h6 {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #00A897;
-  background: rgba(0, 168, 151, 0.1);
-  box-shadow: 0 0 0 3px rgba(0, 168, 151, 0.1);
+  box-shadow: none;
+  border: 1px solid #000;
+  background: #ffffff;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .form-group select {

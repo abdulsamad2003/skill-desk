@@ -73,7 +73,7 @@ const ContactPage = () => {
                   <div className="content">
                     <span className="title">Make A Call</span>
                     <p className="text">
-                      <a href="tel:+918012345678">+91 (801) 234-5678</a>
+                      <a href="tel:+919004282784">+91 9004282784</a>
                     </p>
                   </div>
                 </div>

@@ -6,7 +6,7 @@ const AboutSection = () => {
   return (
     <>
       {/* About area start */}
-      <section id="about" className="about-area-four pt-120 rpt-100">
+      <section id="about" className="about-area-four pt-160 pb-120 rpt-100 rpb-100">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">

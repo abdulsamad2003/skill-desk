@@ -35,7 +35,7 @@ const Footer4 = () => {
               Ready to Enroll Our Course?
             </h3>
             <Link
-              href="contact"
+              href="/contact"
               className="theme-btn style-two"
               data-aos="fade-right"
               data-aos-duration={1500}
@@ -89,19 +89,19 @@ const Footer4 = () => {
                 <h6 className="footer-title">Courses</h6>
                 <ul>
                   <li>
-                    <Link href="contact">Web Design</Link>
+                    <Link href="/contact">Web Design</Link>
                   </li>
                   <li>
-                    <Link href="contact">Digital Marketing</Link>
+                    <Link href="/contact">Digital Marketing</Link>
                   </li>
                   <li>
-                    <Link href="contact">Apps Development</Link>
+                    <Link href="/contact">Apps Development</Link>
                   </li>
                   <li>
-                    <Link href="contact">Graphics Design</Link>
+                    <Link href="/contact">Graphics Design</Link>
                   </li>
                   <li>
-                    <Link href="contact">Computer Science</Link>
+                    <Link href="/contact">Computer Science</Link>
                   </li>
                 </ul>
               </div>
@@ -117,19 +117,19 @@ const Footer4 = () => {
                 <h6 className="footer-title">Quick Link</h6>
                 <ul>
                   <li>
-                    <Link href="services">Features</Link>
+                    <Link href="/features">Features</Link>
                   </li>
                   <li>
-                    <Link href="pricing">Pricing Plan</Link>
+                    <Link href="/pricing">Pricing Plan</Link>
                   </li>
                   <li>
-                    <Link href="about">Best Program</Link>
+                    <Link href="/about">Best Program</Link>
                   </li>
                   <li>
-                    <Link href="contact">Press Kit</Link>
+                    <Link href="/contact">Press Kit</Link>
                   </li>
                   <li>
-                    <Link href="about">About Company</Link>
+                    <Link href="/about">About Company</Link>
                   </li>
                 </ul>
               </div>
@@ -145,58 +145,64 @@ const Footer4 = () => {
                 <h6 className="footer-title">Gallery</h6>
                 <ul>
                   <li>
-                    <Link href="project-details">
+                    {/* Made gallery items unclickable on home page */}
+                    <span className="cursor-pointer">
                       <img
                         src="/images/footer/gallery1.png"
                         alt="Gallery"
                       />
                       <i className="far fa-arrow-right" />
-                    </Link>
+                    </span>
                   </li>
                   <li>
-                    <Link href="project-details">
+                    {/* Made gallery items unclickable on home page */}
+                    <span className="cursor-pointer">
                       <img
                         src="/images/footer/gallery2.png"
                         alt="Gallery"
                       />
                       <i className="far fa-arrow-right" />
-                    </Link>
+                    </span>
                   </li>
                   <li>
-                    <Link href="project-details">
+                    {/* Made gallery items unclickable on home page */}
+                    <span className="cursor-pointer">
                       <img
                         src="/images/footer/gallery3.png"
                         alt="Gallery"
                       />
                       <i className="far fa-arrow-right" />
-                    </Link>
+                    </span>
                   </li>
                   <li>
-                    <Link href="project-details">
+                    {/* Made gallery items unclickable on home page */}
+                    <span className="cursor-pointer">
                       <img
                         src="/images/footer/gallery4.png"
                         alt="Gallery"
                       />
                       <i className="far fa-arrow-right" />
-                    </Link>
+                    </span>
                   </li>
                   <li>
-                    <Link href="project-details">
+                    {/* Made gallery items unclickable on home page */}
+                    <span className="cursor-pointer">
                       <img
                         src="/images/footer/gallery5.png"
                         alt="Gallery"
                       />
                       <i className="far fa-arrow-right" />
-                    </Link>
+                    </span>
                   </li>
                   <li>
-                    <Link href="project-details">
+                    {/* Made gallery items unclickable on home page */}
+                    <span className="cursor-pointer">
                       <img
                         src="/images/footer/gallery6.png"
                         alt="Gallery"
                       />
                       <i className="far fa-arrow-right" />
-                    </Link>
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -226,16 +232,16 @@ const Footer4 = () => {
                 >
                   <ul>
                     <li>
-                      <Link href="faqs">Faqs</Link>
+                      <Link href="/faqs">Faqs</Link>
                     </li>
                     <li>
-                      <Link href="about">Setting</Link>
+                      <Link href="/about">Setting</Link>
                     </li>
                     <li>
-                      <Link href="about">Privacy</Link>
+                      <Link href="/about">Privacy</Link>
                     </li>
                     <li>
-                      <Link href="contact">Contact</Link>
+                      <Link href="/contact">Contact</Link>
                     </li>
                   </ul>
                 </div>
@@ -249,4 +255,4 @@ const Footer4 = () => {
         </div>
       </footer>
     );
-  };   
+  };

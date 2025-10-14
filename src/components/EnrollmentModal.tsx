@@ -7,7 +7,11 @@ interface EnrollmentModalProps {
   courseName: string;
 }
 
-const EnrollmentModal = ({ isOpen, onClose, courseName }: EnrollmentModalProps) => {
+const EnrollmentModal = ({
+  isOpen,
+  onClose,
+  courseName,
+}: EnrollmentModalProps) => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -17,7 +21,11 @@ const EnrollmentModal = ({ isOpen, onClose, courseName }: EnrollmentModalProps) 
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -36,21 +44,21 @@ const EnrollmentModal = ({ isOpen, onClose, courseName }: EnrollmentModalProps) 
 
   return (
     <div className="enrollment-modal-overlay" onClick={onClose}>
-      <div className="enrollment-modal-content" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="enrollment-modal-content"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className="modal-close-btn" onClick={onClose}>
           <i className="fas fa-times"></i>
         </button>
-        
+
         <div className="modal-header">
           <h2>Enroll in Course</h2>
           <p className="course-name">{courseName}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="enrollment-form">
-          <div className="form-group">
-            <label htmlFor="fullName">
-              Full Name <span className="required">*</span>
-            </label>
+          <div className="form-group label-floating">
             <input
               type="text"
               id="fullName"
@@ -58,15 +66,15 @@ const EnrollmentModal = ({ isOpen, onClose, courseName }: EnrollmentModalProps) 
               value={formData.fullName}
               onChange={handleChange}
               required
-              placeholder="Enter your full name"
+              placeholder=" "
             />
+            <label htmlFor="fullName">
+              Full Name <span className="required">*</span>
+            </label>
           </div>
 
           <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="email">
-                Email Address <span className="required">*</span>
-              </label>
+            <div className="form-group label-floating">
               <input
                 type="email"
                 id="email"
@@ -74,14 +82,14 @@ const EnrollmentModal = ({ isOpen, onClose, courseName }: EnrollmentModalProps) 
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="your.email@example.com"
+                placeholder=" "
               />
+              <label htmlFor="email">
+                Email Address <span className="required">*</span>
+              </label>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="phone">
-                Phone Number <span className="required">*</span>
-              </label>
+            <div className="form-group label-floating">
               <input
                 type="tel"
                 id="phone"
@@ -89,16 +97,16 @@ const EnrollmentModal = ({ isOpen, onClose, courseName }: EnrollmentModalProps) 
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                placeholder="+91 XXXXX XXXXX"
+                placeholder=" "
               />
+              <label htmlFor="phone">
+                Phone Number <span className="required">*</span>
+              </label>
             </div>
           </div>
 
           <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="education">
-                Education Level <span className="required">*</span>
-              </label>
+            <div className="form-group label-floating">
               <select
                 id="education"
                 name="education"
@@ -106,53 +114,56 @@ const EnrollmentModal = ({ isOpen, onClose, courseName }: EnrollmentModalProps) 
                 onChange={handleChange}
                 required
               >
-                <option value="">Select your education level</option>
+                <option value=""></option>
                 <option value="high-school">High School</option>
                 <option value="undergraduate">Undergraduate</option>
                 <option value="graduate">Graduate</option>
                 <option value="postgraduate">Postgraduate</option>
                 <option value="other">Other</option>
               </select>
+              <label htmlFor="education">
+                Education Level <span className="required">*</span>
+              </label>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="experience">
-                Experience Level
-              </label>
+            <div className="form-group label-floating">
               <select
                 id="experience"
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
               >
-                <option value="">Select your experience level</option>
+                <option value=""></option>
                 <option value="beginner">Beginner</option>
                 <option value="intermediate">Intermediate</option>
                 <option value="advanced">Advanced</option>
                 <option value="expert">Expert</option>
               </select>
+              <label htmlFor="experience">Experience Level</label>
             </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="message">
-              Additional Information
-            </label>
+          <div className="form-group label-floating">
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              placeholder="Tell us why you want to enroll in this course..."
+              placeholder=" "
             ></textarea>
+            <label htmlFor="message">Additional Information</label>
           </div>
 
           <div className="form-actions">
-            <button type="button" className="btn-cancel" onClick={onClose}>
+            <button
+              type="button"
+              className="theme-btn style-four"
+              onClick={onClose}
+            >
               Cancel
             </button>
-            <button type="submit" className="btn-submit">
+            <button type="submit" className="theme-btn style-two">
               Submit Enrollment <i className="far fa-arrow-right"></i>
             </button>
           </div>
@@ -163,4 +174,3 @@ const EnrollmentModal = ({ isOpen, onClose, courseName }: EnrollmentModalProps) 
 };
 
 export default EnrollmentModal;
-

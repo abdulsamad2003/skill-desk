@@ -2,11 +2,12 @@
 import Isotope from "isotope-layout";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { courses } from "@/data/courseData";
 
 const CoursesIsotope = () => {
   const isotope = useRef<Isotope | null>(null);
   const [filterKey, setFilterKey] = useState("*");
-  
+
   useEffect(() => {
     setTimeout(() => {
       isotope.current = new Isotope(".course-active", {
@@ -19,7 +20,7 @@ const CoursesIsotope = () => {
       });
     }, 500);
   }, []);
-  
+
   useEffect(() => {
     if (isotope.current) {
       filterKey === "*"
@@ -27,12 +28,18 @@ const CoursesIsotope = () => {
         : isotope.current.arrange({ filter: `.${filterKey}` });
     }
   }, [filterKey]);
-  
+
   const handleFilterKeyChange = (key: string) => () => {
     setFilterKey(key);
   };
-  
+
   const activeBtn = (value: string) => (value === filterKey ? "active" : "");
+
+  // Get unique categories for filter
+  const categories = Array.from(
+    new Set(courses.map((course) => course.category))
+  );
+
   return (
     <section
       id="course"
@@ -66,284 +73,84 @@ const CoursesIsotope = () => {
               >
                 All Categories <i className="far fa-arrow-right" />
               </li>
-              <li
-                className={`c-pointer ${activeBtn("design")}`}
-                onClick={handleFilterKeyChange("design")}
-                data-filter=".design"
-              >
-                UI/UX Design <i className="far fa-arrow-right" />
-              </li>
-              <li
-                className={`c-pointer ${activeBtn("development")}`}
-                onClick={handleFilterKeyChange("development")}
-                data-filter=".development"
-              >
-                Development <i className="far fa-arrow-right" />
-              </li>
-              <li
-                className={`c-pointer ${activeBtn("marketing")}`}
-                onClick={handleFilterKeyChange("marketing")}
-                data-filter=".marketing"
-              >
-                Marketing <i className="far fa-arrow-right" />
-              </li>
-              <li
-                className={`c-pointer ${activeBtn("business")}`}
-                onClick={handleFilterKeyChange("business")}
-                data-filter=".business"
-              >
-                Business <i className="far fa-arrow-right" />
-              </li>
-              <li
-                className={`c-pointer ${activeBtn("medical")}`}
-                onClick={handleFilterKeyChange("medical")}
-                data-filter=".medical"
-              >
-                Medical Care <i className="far fa-arrow-right" />
-              </li>
+              {categories.map((category, index) => (
+                <li
+                  key={category}
+                  className={`c-pointer ${activeBtn(
+                    category.toLowerCase().replace(/\s+/g, "-")
+                  )}`}
+                  onClick={handleFilterKeyChange(
+                    category.toLowerCase().replace(/\s+/g, "-")
+                  )}
+                  data-filter={`.${category
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                >
+                  {category} <i className="far fa-arrow-right" />
+                </li>
+              ))}
             </ul>
           </div>
           <div className="col-lg-9">
             <div className="row course-active">
-              <div className="col-xl-4 col-sm-6 item design business">
+              {courses.map((course, index) => (
                 <div
-                  className="course-item"
-                  data-aos="fade-up"
-                  data-aos-delay={100}
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
+                  key={course.id}
+                  className={`col-xl-4 col-sm-6 item ${course.category
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
                 >
-                  <div className="image">
-                    <img src="/images/courses/course1.jpg" alt="Course" />
-                    <Link href="/course-details" className="details-btn">
-                      <i className="far fa-arrow-right" />
-                    </Link>
-                  </div>
-                  <div className="content">
-                    <Link className="category" href="/course-details">
-                      Web Design
-                    </Link>
-                    <h6>
-                      <Link href="/course-details">Basic to Advance UI/UX Design (Web+Mobile)</Link>
-                    </h6>
-                    <div className="author">
-                      <img
-                        src="/images/courses/course-author1.png"
-                        alt="Author"
-                      />
-                      <span>Byron F. Lambert</span>
+                  <div
+                    className="course-item"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 50}
+                    data-aos-duration={1500}
+                    data-aos-offset={50}
+                  >
+                    <div className="image">
+                      <img src={course.image} alt={course.title} />
+                      <Link
+                        href={`/courses/${course.slug}`}
+                        className="details-btn"
+                      >
+                        <i className="far fa-arrow-right" />
+                      </Link>
+                    </div>
+                    <div className="content">
+                      <Link
+                        className="category"
+                        href={`/courses/${course.slug}`}
+                      >
+                        {course.category}
+                      </Link>
+                      <h6>
+                        <Link href={`/courses/${course.slug}`}>
+                          {course.title}
+                        </Link>
+                      </h6>
+                      <div className="author">
+                        <img src={course.instructorImage} alt="Author" />
+                        <span>{course.author}</span>
+                      </div>
+                    </div>
+                    <div className="duration-ratting">
+                      <span className="duration">
+                        <i className="far fa-clock" />{" "}
+                        <b>
+                          {course.duration
+                            .replace(" minutes", "")
+                            .replace(" minute", "")}
+                        </b>{" "}
+                        minute
+                      </span>
+                      <span className="ratting">
+                        <i className="fas fa-star" />
+                        <span>{course.rating.replace("/5.0", "")}</span>
+                      </span>
                     </div>
                   </div>
-                  <div className="duration-ratting">
-                    <span className="duration">
-                      <i className="far fa-clock" /> <b>185</b> minute
-                    </span>
-                    <span className="ratting">
-                      <i className="fas fa-star" />
-                      <span>4.9</span>
-                    </span>
-                  </div>
                 </div>
-              </div>
-              <div className="col-xl-4 col-sm-6 item development medical">
-                <div
-                  className="course-item"
-                  data-aos="fade-up"
-                  data-aos-delay={150}
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
-                >
-                  <div className="image">
-                    <img src="/images/courses/course2.jpg" alt="Course" />
-                    <Link href="/course-details" className="details-btn">
-                      <i className="far fa-arrow-right" />
-                    </Link>
-                  </div>
-                  <div className="content">
-                    <Link className="category" href="/course-details">
-                      iOS Mobile App
-                    </Link>
-                    <h6>
-                      <Link href="/course-details">Basic to Advance Mobile Apps Development</Link>
-                    </h6>
-                    <div className="author">
-                      <img
-                        src="/images/courses/course-author2.png"
-                        alt="Author"
-                      />
-                      <span>Byron F. Lambert</span>
-                    </div>
-                  </div>
-                  <div className="duration-ratting">
-                    <span className="duration">
-                      <i className="far fa-clock" /> <b>185</b> minute
-                    </span>
-                    <span className="ratting">
-                      <i className="fas fa-star" />
-                      <span>4.9</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-sm-6 item design marketing">
-                <div
-                  className="course-item"
-                  data-aos="fade-up"
-                  data-aos-delay={200}
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
-                >
-                  <div className="image">
-                    <img src="/images/courses/course3.jpg" alt="Course" />
-                    <Link href="/course-details" className="details-btn">
-                      <i className="far fa-arrow-right" />
-                    </Link>
-                  </div>
-                  <div className="content">
-                    <Link className="category" href="/course-details">
-                      Digital Marketing
-                    </Link>
-                    <h6>
-                      <Link href="/course-details">Grow Your Digital Marketing With Lamber</Link>
-                    </h6>
-                    <div className="author">
-                      <img
-                        src="/images/courses/course-author3.png"
-                        alt="Author"
-                      />
-                      <span>Byron F. Lambert</span>
-                    </div>
-                  </div>
-                  <div className="duration-ratting">
-                    <span className="duration">
-                      <i className="far fa-clock" /> <b>185</b> minute
-                    </span>
-                    <span className="ratting">
-                      <i className="fas fa-star" />
-                      <span>4.9</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-sm-6 item development medical">
-                <div
-                  className="course-item"
-                  data-aos="fade-up"
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
-                >
-                  <div className="image">
-                    <img src="/images/courses/course4.jpg" alt="Course" />
-                    <Link href="/course-details" className="details-btn">
-                      <i className="far fa-arrow-right" />
-                    </Link>
-                  </div>
-                  <div className="content">
-                    <Link className="category" href="/course-details">
-                      Business
-                    </Link>
-                    <h6>
-                      <Link href="/course-details">How To Grow your Business Development</Link>
-                    </h6>
-                    <div className="author">
-                      <img
-                        src="/images/courses/course-author4.png"
-                        alt="Author"
-                      />
-                      <span>Byron F. Lambert</span>
-                    </div>
-                  </div>
-                  <div className="duration-ratting">
-                    <span className="duration">
-                      <i className="far fa-clock" /> <b>185</b> minute
-                    </span>
-                    <span className="ratting">
-                      <i className="fas fa-star" />
-                      <span>4.9</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-sm-6 item design business">
-                <div
-                  className="course-item"
-                  data-aos="fade-up"
-                  data-aos-delay={50}
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
-                >
-                  <div className="image">
-                    <img src="/images/courses/course5.jpg" alt="Course" />
-                    <Link href="/course-details" className="details-btn">
-                      <i className="far fa-arrow-right" />
-                    </Link>
-                  </div>
-                  <div className="content">
-                    <Link className="category" href="/course-details">
-                      Medical Care
-                    </Link>
-                    <h6>
-                      <Link href="/course-details">Basic Medical Caring from your Home</Link>
-                    </h6>
-                    <div className="author">
-                      <img
-                        src="/images/courses/course-author5.png"
-                        alt="Author"
-                      />
-                      <span>Byron F. Lambert</span>
-                    </div>
-                  </div>
-                  <div className="duration-ratting">
-                    <span className="duration">
-                      <i className="far fa-clock" /> <b>185</b> minute
-                    </span>
-                    <span className="ratting">
-                      <i className="fas fa-star" />
-                      <span>4.9</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-sm-6 item marketing medical">
-                <div
-                  className="course-item"
-                  data-aos="fade-up"
-                  data-aos-delay={100}
-                  data-aos-duration={1500}
-                  data-aos-offset={50}
-                >
-                  <div className="image">
-                    <img src="/images/courses/course6.jpg" alt="Course" />
-                    <Link href="/course-details" className="details-btn">
-                      <i className="far fa-arrow-right" />
-                    </Link>
-                  </div>
-                  <div className="content">
-                    <Link className="category" href="/course-details">
-                      Mobile Apps
-                    </Link>
-                    <h6>
-                      <Link href="/course-details">Basic to Advance UI/UX Design (Web+Mobile)</Link>
-                    </h6>
-                    <div className="author">
-                      <img
-                        src="/images/courses/course-author6.png"
-                        alt="Author"
-                      />
-                      <span>Byron F. Lambert</span>
-                    </div>
-                  </div>
-                  <div className="duration-ratting">
-                    <span className="duration">
-                      <i className="far fa-clock" /> <b>185</b> minute
-                    </span>
-                    <span className="ratting">
-                      <i className="fas fa-star" />
-                      <span>4.9</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -352,4 +159,3 @@ const CoursesIsotope = () => {
   );
 };
 export default CoursesIsotope;
-

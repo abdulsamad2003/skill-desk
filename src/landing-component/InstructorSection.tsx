@@ -17,9 +17,9 @@ const InstructorSection = () => {
               <div className="section-title pb-10">
                 <span className="subtitle-two mb-25">
                   <i className="fas fa-play-circle" />{" "}
-                  <span>Become A Member</span>
+                  <span>Become an Instructor</span>
                 </span>
-                <h2>Are You Interested to Join Our Team As a Instructor?</h2>
+                <h2>Are You Interested to Join Our Team as an Instructor?</h2>
               </div>
               <p>
                 We denounce with righteous indignation and dislike men who are
@@ -27,7 +27,7 @@ const InstructorSection = () => {
                 moment
               </p>
               <Link href="contact" className="theme-btn style-two mt-30">
-                Become a Instructor <i className="far fa-arrow-right" />
+                Become an Instructor <i className="far fa-arrow-right" />
               </Link>
             </div>
           </div>

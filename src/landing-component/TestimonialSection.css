@@ -113,9 +113,23 @@
   margin-right: 30px;
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 767px) {
   .testimonial-item-three .image {
     margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .testimonial-item-three .image {
+    max-width: 150px;
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .testimonial-item-three .image {
+    max-width: 120px;
+    margin-right: 15px;
   }
 }
 
@@ -147,9 +161,15 @@
   font-family: var(--heading-font);
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 480px) {
   .testimonial-item-three .author-text {
     font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .testimonial-item-three .author-text {
+    font-size: 16px;
   }
 }
 
@@ -162,9 +182,15 @@
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 376px) {
+@media only screen and (min-width: 481px) {
   .testimonial-item-three .name-designation h6 {
     font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .testimonial-item-three .name-designation h6 {
+    font-size: 16px;
   }
 }
 
@@ -203,5 +229,88 @@
   .rpy-100 {
     padding-top: 100px;
     padding-bottom: 100px;
+  }
+}
+
+/* Additional Mobile Responsive Styles */
+@media only screen and (max-width: 767px) {
+  .rpy-100 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .testimonials-area-four {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  .testimonials-area-four .section-title {
+    margin-bottom: 35px;
+  }
+  
+  .testimonials-area-four .section-title.text-white h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+  
+  .testimonials-area-four .section-title.text-white .subtitle-two {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .testimonials-area-four {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .testimonials-area-four .section-title.text-white h2 {
+    font-size: 24px;
+  }
+  
+  .testi-slider-four {
+    padding-bottom: 50px !important;
+  }
+  
+  .testimonial-item-three .ratting {
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-item-three .author-text {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+  
+  .testimonial-item-three .name-designation {
+    padding-left: 50px;
+  }
+  
+  .testimonial-item-three .name-designation:before {
+    font-size: 50px;
+    left: -3px;
+    top: -3px;
+  }
+  
+  .testimonial-item-three .image {
+    max-width: 120px;
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .testimonial-item-three .name-designation {
+    padding-left: 40px;
+  }
+  
+  .testimonial-item-three .name-designation:before {
+    font-size: 40px;
+  }
+  
+  .testimonial-item-three .author-text {
+    font-size: 16px;
   }
 }

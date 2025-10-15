@@ -20,7 +20,7 @@ const HeroSection = () => {
               data-aos-duration={1500}
               data-aos-offset={50}
             >
-              Build your Academy and <span>e-Learning</span> Portal in 15 mins
+              Build your Academy and <span>e-Learning</span> Course in 15 mins
             </h1>
             <ul
               className="icon-list style-two mt-35 mb-30"

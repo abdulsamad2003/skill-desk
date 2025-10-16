@@ -1,10 +1,13 @@
 "use client";
 
 import PageLayout from "@/components/PageLayout";
+import HeroSection from "@/landing-component/HeroSection";
 
 const ContactPage = () => {
   return (
     <PageLayout header={4} footer={4} bodyClass="contact-page-body">
+      <HeroSection />
+      
       {/* Contact Page Start */}
       <section className="contact-page py-130 rpy-100">
         <div className="container">

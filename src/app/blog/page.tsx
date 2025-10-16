@@ -4,11 +4,12 @@ import PageLayout from "@/components/PageLayout";
 import Link from "next/link";
 import { blogPosts } from "@/data/blogData";
 import "./blog.css";
+import HeroSection from "@/landing-component/HeroSection";
 
 const BlogPage = () => {
   return (
     <PageLayout header={4} footer={4} bodyClass="blog-page">
-      {/* PageBanner component removed */}
+      <HeroSection />
 
       <section className="blog-grid-area py-130 rpy-100">
         <div className="container">

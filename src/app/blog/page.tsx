@@ -1,7 +1,6 @@
 "use client";
 
 import PageLayout from "@/components/PageLayout";
-import PageBanner from "@/components/PageBanner";
 import Link from "next/link";
 import { blogPosts } from "@/data/blogData";
 import "./blog.css";
@@ -9,25 +8,35 @@ import "./blog.css";
 const BlogPage = () => {
   return (
     <PageLayout header={4} footer={4} bodyClass="blog-page">
-      <PageBanner pageName="Our Blog" pageTitle="Latest Insights & Updates" />
-      
+      {/* PageBanner component removed */}
+
       <section className="blog-grid-area py-130 rpy-100">
         <div className="container">
           <div className="row justify-content-center mb-60">
             <div className="col-lg-8 text-center">
-              <h2 className="section-heading mb-20" data-aos="fade-up" data-aos-duration={1200}>
+              <h2
+                className="section-heading mb-20"
+                data-aos="fade-up"
+                data-aos-duration={1200}
+              >
                 Discover the Future of Learning
               </h2>
-              <p className="section-description" data-aos="fade-up" data-aos-delay={100} data-aos-duration={1200}>
-                Stay updated with the latest trends, insights, and innovations in AI-powered learning and development
+              <p
+                className="section-description"
+                data-aos="fade-up"
+                data-aos-delay={100}
+                data-aos-duration={1200}
+              >
+                Stay updated with the latest trends, insights, and innovations
+                in AI-powered learning and development
               </p>
             </div>
           </div>
 
           <div className="row g-4">
             {blogPosts.map((post, index) => (
-              <div 
-                className="col-lg-4 col-md-6" 
+              <div
+                className="col-lg-4 col-md-6"
                 key={post.id}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -51,7 +60,7 @@ const BlogPage = () => {
                       <span className="date-month">{post.month}</span>
                     </div>
                   </Link>
-                  
+
                   <div className="blog-card-body">
                     <div className="blog-meta-row">
                       <span className="blog-category">{post.category}</span>
@@ -61,16 +70,17 @@ const BlogPage = () => {
                     </div>
 
                     <h3 className="blog-title">
-                      <Link href={`/blog/${post.slug}`}>
-                        {post.title}
-                      </Link>
+                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                     </h3>
 
                     <p className="blog-excerpt">
                       {post.description.substring(0, 120)}...
                     </p>
 
-                    <Link href={`/blog/${post.slug}`} className="blog-read-link">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="blog-read-link"
+                    >
                       <span>Read More</span>
                       <i className="far fa-arrow-right"></i>
                     </Link>

@@ -1,7 +1,6 @@
 "use client";
 
 import PageLayout from "@/components/PageLayout";
-import PageBanner from "@/components/PageBanner";
 import Link from "next/link";
 import { courses } from "@/data/courseData";
 import "./courses.css";
@@ -9,11 +8,6 @@ import "./courses.css";
 const CoursesPage = () => {
   return (
     <PageLayout header={4} footer={4} bodyClass="blog-page">
-      <PageBanner
-        pageName="Our Courses"
-        pageTitle="Explore Our Learning Paths"
-      />
-
       <section className="blog-grid-area py-130 rpy-100">
         <div className="container">
           <div className="row justify-content-center mb-60">

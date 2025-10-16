@@ -22,9 +22,10 @@ const InstructorSection = () => {
                 <h2>Are You Interested to Join Our Team as an Instructor?</h2>
               </div>
               <p>
-                We denounce with righteous indignation and dislike men who are
-                so beguiled and demoralized by the charms of pleasure of the
-                moment
+                We’re always looking for talented instructors who love to teach
+                and inspire others. Whether you’re a seasoned expert or just
+                starting your teaching journey, this is your chance to connect
+                with thousands of learners and grow your professional reach.
               </p>
               <Link href="contact" className="theme-btn style-two mt-30">
                 Become an Instructor <i className="far fa-arrow-right" />

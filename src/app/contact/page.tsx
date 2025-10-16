@@ -1,13 +1,10 @@
 "use client";
 
 import PageLayout from "@/components/PageLayout";
-import PageBanner from "@/components/PageBanner";
 
 const ContactPage = () => {
   return (
     <PageLayout header={4} footer={4} bodyClass="contact-page-body">
-      <PageBanner pageName="Contact Us" />
-      
       {/* Contact Page Start */}
       <section className="contact-page py-130 rpy-100">
         <div className="container">
@@ -22,8 +19,8 @@ const ContactPage = () => {
                 >
                   <h2>Feel Free to Contact Us, Get In Touch</h2>
                   <p>
-                    We&apos;re here to assist you in any way we can. Whether you have
-                    questions, feedback, or just want to say hello
+                    We&apos;re here to assist you in any way we can. Whether you
+                    have questions, feedback, or just want to say hello
                   </p>
                 </div>
                 <div
@@ -39,7 +36,8 @@ const ContactPage = () => {
                   <div className="content">
                     <span className="title">Location</span>
                     <p className="text">
-                      806, Niharika Mirrage, Sector 10, Kharghar, Navi Mumbai, Maharashtra, 410210
+                      806, Niharika Mirrage, Sector 10, Kharghar, Navi Mumbai,
+                      Maharashtra, 410210
                     </p>
                   </div>
                 </div>
@@ -187,7 +185,7 @@ const ContactPage = () => {
         </div>
       </section>
       {/* Contact Page End */}
-      
+
       {/* Location Map Area Start */}
       <div className="contact-page-map">
         <div className="our-location">
@@ -206,4 +204,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-

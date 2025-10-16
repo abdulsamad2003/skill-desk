@@ -6,6 +6,9 @@ const HowItWorks = () => {
     <section
       id="how-it-works"
       className="roadmap-area pt-140 rpt-100 pb-130 rpb-100"
+      style={{
+        backgroundColor: "#00194C"
+      }}
     >
       <div className="container">
         <div className="row">

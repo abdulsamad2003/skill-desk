@@ -68,7 +68,7 @@ const HeroSection = () => {
           {...sliderProps.marqueeSliderRight}
           className="marquee-slider-right text-white iconic-slider-right"
         >
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member1.png" alt="Member" />
             </div>
@@ -77,7 +77,7 @@ const HeroSection = () => {
               <span className="subtitle">Technology</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member2.png" alt="Member" />
             </div>
@@ -86,7 +86,7 @@ const HeroSection = () => {
               <span className="subtitle">Artificial Intelligence</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member3.png" alt="Member" />
             </div>
@@ -95,7 +95,7 @@ const HeroSection = () => {
               <span className="subtitle">Agriculture</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member4.png" alt="Member" />
             </div>
@@ -104,7 +104,7 @@ const HeroSection = () => {
               <span className="subtitle">Aerospace</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member5.png" alt="Member" />
             </div>
@@ -113,7 +113,7 @@ const HeroSection = () => {
               <span className="subtitle">Finance</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member6.png" alt="Member" />
             </div>
@@ -127,7 +127,7 @@ const HeroSection = () => {
           {...sliderProps.marqueeSliderLeft}
           className="marquee-slider-left text-white iconic-slider-left"
         >
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member7.png" alt="Member" />
             </div>
@@ -136,7 +136,7 @@ const HeroSection = () => {
               <span className="subtitle">Compliance</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member8.png" alt="Member" />
             </div>
@@ -145,7 +145,7 @@ const HeroSection = () => {
               <span className="subtitle">Construction</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member9.png" alt="Member" />
             </div>
@@ -154,7 +154,7 @@ const HeroSection = () => {
               <span className="subtitle">Education</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member10.png" alt="Member" />
             </div>
@@ -163,7 +163,7 @@ const HeroSection = () => {
               <span className="subtitle">Cybersecurity</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member11.png" alt="Member" />
             </div>
@@ -172,7 +172,7 @@ const HeroSection = () => {
               <span className="subtitle">Food Industry</span>
             </div>
           </div>
-          <div className="marquee-iconic-box d-flex animate-float">
+          <div className="marquee-iconic-box d-flex">
             <div className="image">
               <img src="/images/marquee-box/member12.png" alt="Member" />
             </div>

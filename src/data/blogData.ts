@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     month: "Sep",
     category: "AI in Education",
     title: "Transforming Learning with AI: Why SkillDesk.AI Is The Future",
-    author: "Bikash Panda",
+    author: "SkillDesk.ai",
     description: "SkillDesk.AI redefines how organizations, educators, and teams approach learning. Powered by advanced artificial intelligence, SkillDesk.AI delivers instant course creation, adaptive learning paths, and automated skill gap analysis—all within a unified, mobile-friendly platform.",
     content: `SkillDesk.AI redefines how organizations, educators, and teams approach learning. Powered by advanced artificial intelligence, SkillDesk.AI delivers instant course creation, adaptive learning paths, and automated skill gap analysis—all within a unified, mobile-friendly platform. 
 
@@ -38,7 +38,7 @@ With features like instant course generation, personalized learning paths, and c
     month: "Sep",
     category: "Learning & Development",
     title: "Personalized Learning for Every Team Member: SkillDesk.AI's Smart Approach",
-    author: "Bikash Panda",
+    author: "SkillDesk.ai",
     description: "One-size-fits-all learning is outdated. SkillDesk.AI uses AI to tailor courses and recommendations for each learner, ensuring targeted upskilling that matches individual goals and roles.",
     content: `One-size-fits-all learning is outdated. SkillDesk.AI uses AI to tailor courses and recommendations for each learner, ensuring targeted upskilling that matches individual goals and roles. 
 
@@ -56,7 +56,7 @@ The platform's adaptive algorithms continuously refine learning paths based on p
     month: "Sep",
     category: "Workplace Productivity",
     title: "Seamless Integration, Effortless Growth: Why Businesses Choose SkillDesk.AI",
-    author: "Bikash Panda",
+    author: "SkillDesk.ai",
     description: "SkillDesk.AI is designed for interoperability—connect your HR, talent management, and productivity tools to unify training without tech headaches.",
     content: `SkillDesk.AI is designed for interoperability—connect your HR, talent management, and productivity tools to unify training without tech headaches. From industry-leading AI course builders to real-time team readiness insights, this platform empowers educators, trainers, SMEs, and startups to accelerate learning and adaptation.
 

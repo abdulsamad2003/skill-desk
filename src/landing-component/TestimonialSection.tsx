@@ -7,7 +7,10 @@ const TestimonialSection = () => {
   return (
     <section
       id="testimonials"
-      className="testimonials-area-four bg-black py-120 rpy-100"
+      className="testimonials-area-four py-120 rpy-100"
+      style={{
+        backgroundColor: "#00194C"
+      }}
     >
       <div className="container">
         <div className="row justify-content-center">

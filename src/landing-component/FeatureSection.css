@@ -34,6 +34,17 @@
 
 .special-features-area .section-title .subtitle-two i {
   margin-right: 10px;
+  display: inline-block;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .special-features-area .section-title h2 {
@@ -77,10 +88,47 @@
   font-size: 55px;
   margin-bottom: 25px;
   color: var(--secondary-color);
+  animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
 }
 
 .iconic-box.style-six .icon:after {
   display: none;
+}
+
+.iconic-box.style-six:hover .icon {
+  animation: pulse 0.6s ease-in-out;
+  color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+/* Staggered animation delays for feature icons */
+.iconic-box.style-six:nth-child(1) .icon {
+  animation-delay: 0s;
+}
+
+.iconic-box.style-six:nth-child(2) .icon {
+  animation-delay: 0.2s;
+}
+
+.iconic-box.style-six:nth-child(3) .icon {
+  animation-delay: 0.4s;
+}
+
+.iconic-box.style-six:nth-child(4) .icon {
+  animation-delay: 0.6s;
+}
+
+.iconic-box.style-six:nth-child(5) .icon {
+  animation-delay: 0.8s;
+}
+
+.iconic-box.style-six:nth-child(6) .icon {
+  animation-delay: 1s;
+}
+
+.iconic-box.style-six:nth-child(7) .icon {
+  animation-delay: 1.2s;
 }
 
 .iconic-box.style-six .content {
@@ -210,6 +258,18 @@
   border-radius: 50%;
   color: white;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.marquee-iconic-box:hover .icon {
+  animation: rotate 0.8s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.marquee-iconic-box:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
 }
 
 .marquee-iconic-box .content {
@@ -331,6 +391,76 @@
   }
 }
 
+/* Icon Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
 /* Mobile Responsive Styles for White Background Marquee */
 @media only screen and (max-width: 575px) {
   .marquee-iconic-box-area.bg-white .marquee-slider-right .marquee-iconic-box {
@@ -399,5 +529,34 @@
   
   .rpb-40 {
     padding-bottom: 40px;
+  }
+}
+
+/* Reduce motion for mobile devices and users who prefer reduced motion */
+@media only screen and (max-width: 767px) {
+  .iconic-box.style-six .icon {
+    animation: none;
+  }
+  
+  .iconic-box.style-six:hover .icon {
+    animation: pulse 0.4s ease-in-out;
+  }
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .iconic-box.style-six .icon,
+  .marquee-iconic-box .icon,
+  .iconic-box.style-six:hover .icon,
+  .marquee-iconic-box:hover .icon {
+    animation: none !important;
+  }
+  
+  .iconic-box.style-six:hover .icon {
+    transform: none;
+  }
+  
+  .marquee-iconic-box:hover {
+    transform: none;
   }
 }
